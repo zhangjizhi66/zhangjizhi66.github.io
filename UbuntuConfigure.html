@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>index</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>UbuntuConfigure</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14579,7 +14579,48 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="%E5%BC%A0%E9%9B%86%E6%99%BA">&#24352;&#38598;&#26234;<a class="anchor-link" href="#%E5%BC%A0%E9%9B%86%E6%99%BA">&#182;</a></h1><p>北京大学物理学院技术物理系2021级博士研究生</p>
+<h1 id="Ubuntu-%E9%85%8D%E7%BD%AE">Ubuntu &#37197;&#32622;<a class="anchor-link" href="#Ubuntu-%E9%85%8D%E7%BD%AE">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="CERN-ROOT-+-Jupyter-Notebook-%E5%AE%89%E8%A3%85">CERN ROOT + Jupyter Notebook &#23433;&#35013;<a class="anchor-link" href="#CERN-ROOT-+-Jupyter-Notebook-%E5%AE%89%E8%A3%85">&#182;</a></h3><ul>
+<li>自动安装脚本<ul>
+<li><a href="https://github.com/wuhongyi/BasicConfiguration">https://github.com/wuhongyi/BasicConfiguration</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="Jupyter-Notebook-%E9%85%8D%E7%BD%AE">Jupyter Notebook &#37197;&#32622;<a class="anchor-link" href="#Jupyter-Notebook-%E9%85%8D%E7%BD%AE">&#182;</a></h3><ul>
+<li><p>生成配置文件</p>
+<div class="highlight"><pre><span></span>$ jupyter notebook --generate-config
+</pre></div>
+</li>
+<li><p>生成密码密文</p>
+<div class="highlight"><pre><span></span>$ ipython
+</pre></div>
+<div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">notebook.auth</span> <span class="kn">import</span> <span class="n">passwd</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">passwd</span><span class="p">()</span>     
+<span class="n">Enter</span> <span class="n">password</span><span class="p">:</span> 
+<span class="n">Verify</span> <span class="n">password</span><span class="p">:</span> 
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="s1">&#39;xxx&#39;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">quit</span>
+</pre></div>
+</li>
+<li><p>将配置文件复制到 jupyter 主文件夹下，并加入如下配置</p>
+<div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">password</span><span class="o">=</span><span class="s1">&#39;xxx&#39;</span>   <span class="c1"># 密码密文</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">port</span><span class="o">=</span><span class="mi">8888</span>    <span class="c1"># 端口号</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">ip</span><span class="o">=</span><span class="s1">&#39;*&#39;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">allow_remote_access</span><span class="o">=</span><span class="kc">True</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">open_browser</span><span class="o">=</span><span class="kc">False</span>
+</pre></div>
+</li>
+</ul>
 
 </div>
 </div>
@@ -14591,7 +14632,36 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="UbuntuConfigure.html">Ubuntu配置</a></p>
+<h3 id="clash-%E9%85%8D%E7%BD%AE">clash &#37197;&#32622;<a class="anchor-link" href="#clash-%E9%85%8D%E7%BD%AE">&#182;</a></h3><ul>
+<li><p>更新配置文件</p>
+<div class="highlight"><pre><span></span>$ wget -O ~/clash/config.yaml https://subs.941321.xyz/clash/zhangjizhi@pku.edu.cn/z3zna422r8
+</pre></div>
+</li>
+<li><p>设置代理</p>
+<ul>
+<li>http_proxy<ul>
+<li><a href="http://127.0.0.1:7890">http://127.0.0.1:7890</a></li>
+</ul>
+</li>
+<li>https<ul>
+<li><a href="http://127.0.0.1:7890">http://127.0.0.1:7890</a></li>
+</ul>
+</li>
+<li>ftp<ul>
+<li>0</li>
+</ul>
+</li>
+<li>socks<ul>
+<li>socks5://127.0.0.1:7891</li>
+</ul>
+</li>
+<li>no<ul>
+<li>localhost, 127.0.0.0/8, ::1</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
 </div>
 </div>
@@ -14626,7 +14696,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>2023年 10月 27日 星期五 12:49:23 CST
+<pre>2023年 10月 27日 星期五 11:29:34 CST
 
 </pre>
 </div>
