@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>UbuntuConfigure</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>LaBr3wave</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14618,7 +14618,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Ubuntu-%E9%85%8D%E7%BD%AE">Ubuntu &#37197;&#32622;<a class="anchor-link" href="#Ubuntu-%E9%85%8D%E7%BD%AE">&#182;</a></h1>
+<h1 id="LaBr3-%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E7%AE%97%E6%B3%95">LaBr3 &#27874;&#24418;&#35299;&#22534;&#31215;&#31639;&#27861;<a class="anchor-link" href="#LaBr3-%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E7%AE%97%E6%B3%95">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -14629,77 +14629,50 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="CERN-ROOT-+-Jupyter-Notebook-%E5%AE%89%E8%A3%85">CERN ROOT + Jupyter Notebook &#23433;&#35013;<a class="anchor-link" href="#CERN-ROOT-+-Jupyter-Notebook-%E5%AE%89%E8%A3%85">&#182;</a></h3><ul>
-<li>自动安装脚本<ul>
-<li><a href="https://github.com/wuhongyi/BasicConfiguration">https://github.com/wuhongyi/BasicConfiguration</a></li>
+<h3 id="%E6%95%B0%E6%8D%AE">&#25968;&#25454;<a class="anchor-link" href="#%E6%95%B0%E6%8D%AE">&#182;</a></h3><ul>
+<li>每轮约 20 万个长波形，每个波形 20000 个点</li>
+</ul>
+<h3 id="%E8%A7%A6%E5%8F%91%E9%80%BB%E8%BE%91">&#35302;&#21457;&#36923;&#36753;<a class="anchor-link" href="#%E8%A7%A6%E5%8F%91%E9%80%BB%E8%BE%91">&#182;</a></h3><ul>
+<li>快速滤波 (fastfilter) 过阈触发<ul>
+<li>前 1000 个点无信号，用于评估噪声水平</li>
+<li>取噪声水平的若干倍为阈值</li>
 </ul>
 </li>
 </ul>
-<h3 id="Jupyter-Notebook-%E9%85%8D%E7%BD%AE">Jupyter Notebook &#37197;&#32622;<a class="anchor-link" href="#Jupyter-Notebook-%E9%85%8D%E7%BD%AE">&#182;</a></h3><ul>
-<li><p>生成配置文件</p>
-<div class="highlight"><pre><span></span>$ jupyter notebook --generate-config
-</pre></div>
-</li>
-<li><p>生成密码密文</p>
-<div class="highlight"><pre><span></span>$ ipython
-</pre></div>
-<div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">notebook.auth</span> <span class="kn">import</span> <span class="n">passwd</span>
-<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">passwd</span><span class="p">()</span>     
-<span class="n">Enter</span> <span class="n">password</span><span class="p">:</span> 
-<span class="n">Verify</span> <span class="n">password</span><span class="p">:</span> 
-<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="s1">&#39;xxx&#39;</span>
-<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">quit</span>
-</pre></div>
-</li>
-<li><p>将配置文件复制到 jupyter 主文件夹下，并加入如下配置</p>
-<div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">password</span><span class="o">=</span><span class="s1">&#39;xxx&#39;</span>   <span class="c1"># 密码密文</span>
-<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">port</span><span class="o">=</span><span class="mi">8888</span>    <span class="c1"># 端口号</span>
-<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">ip</span><span class="o">=</span><span class="s1">&#39;*&#39;</span>
-<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">allow_remote_access</span><span class="o">=</span><span class="kc">True</span>
-<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">open_browser</span><span class="o">=</span><span class="kc">False</span>
-</pre></div>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="clash-%E9%85%8D%E7%BD%AE">clash &#37197;&#32622;<a class="anchor-link" href="#clash-%E9%85%8D%E7%BD%AE">&#182;</a></h3><ul>
-<li><p>更新配置文件</p>
-<div class="highlight"><pre><span></span>$ wget -O ~/clash/config.yaml https://subs.941321.xyz/clash/zhangjizhi@pku.edu.cn/z3zna422r8
-</pre></div>
-</li>
-<li><p>设置代理</p>
-<ul>
-<li>http_proxy<ul>
-<li><a href="http://127.0.0.1:7890">http://127.0.0.1:7890</a></li>
+<h3 id="%E6%A0%87%E5%87%86%E6%B3%A2%E5%BD%A2%E4%B8%8E%E5%B3%B0%E5%AE%BD%E4%BF%AE%E6%AD%A3">&#26631;&#20934;&#27874;&#24418;&#19982;&#23792;&#23485;&#20462;&#27491;<a class="anchor-link" href="#%E6%A0%87%E5%87%86%E6%B3%A2%E5%BD%A2%E4%B8%8E%E5%B3%B0%E5%AE%BD%E4%BF%AE%E6%AD%A3">&#182;</a></h3><ul>
+<li>取不存在堆积的波形进行分析<ul>
+<li>堆积即触发前后一定范围存在其他触发</li>
 </ul>
 </li>
-<li>https<ul>
-<li><a href="http://127.0.0.1:7890">http://127.0.0.1:7890</a></li>
+<li>计算波形半高宽，画出峰宽-峰高的二维关联图</li>
+<li>在该二维图上用 TCutG 选取密集条带区域<ul>
+<li>条带外的散点来自非常紧密的堆积事件，它们无法用快速滤波分辨出来</li>
 </ul>
 </li>
-<li>ftp<ul>
-<li>0</li>
+<li>用二次函数在 TCutG 范围内拟合峰宽-峰高关系<ul>
+<li>拟合时将统计在峰高维度上进行平均化处理，即随机丢弃一些事件，使二维图在峰高轴上的投影谱贴近一常数</li>
 </ul>
 </li>
-<li>socks<ul>
-<li>socks5://127.0.0.1:7891</li>
-</ul>
-</li>
-<li>no<ul>
-<li>localhost, 127.0.0.0/8, ::1</li>
+<li>在 TCutG 范围内，分别计算标准中子波形和标准gamma波形<ul>
+<li>标准波形按照高度进行归一</li>
+<li>根据峰宽-峰高关系，通过时间轴缩放的方式将峰宽归一到一特定值</li>
 </ul>
 </li>
 </ul>
+<h3 id="%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E4%B8%8E%E6%8B%9F%E5%90%88">&#27874;&#24418;&#35299;&#22534;&#31215;&#19982;&#25311;&#21512;<a class="anchor-link" href="#%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E4%B8%8E%E6%8B%9F%E5%90%88">&#182;</a></h3><ul>
+<li>将原始长波形分段，堆积的信号一起拟合，无堆积的信号相互分离</li>
+<li>以触发位置为初值，进行第一次拟合<ul>
+<li>拟合时，将峰宽与峰高绑定，即根据峰高计算峰宽，然后对波形在时间轴上进行缩放</li>
+</ul>
 </li>
+<li>计算拟合结果与原波形的残差，对残差图寻峰，在峰值处尝试添加新峰拟合<ul>
+<li>添加新峰，要求残差大于噪声水平，且新峰拟合后的位置不能与已有峰重合，且必须将 chi2/ndf 降低到一定比例以下</li>
+<li>若以上条件不满足，则选取残差的另一峰值尝试</li>
+<li>若确定添加新峰，则再次计算拟合残差，重复本步骤</li>
+<li>若所有残差峰值处都不能添加新峰，则结束循环</li>
+</ul>
+</li>
+<li>最后再次检查并剔除位置重合的峰（添加新峰可能会影响原有峰位）</li>
 </ul>
 
 </div>
@@ -14735,7 +14708,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>2023年 10月 27日 星期五 11:29:34 CST
+<pre>2023年 10月 28日 星期六 16:37:19 CST
 
 </pre>
 </div>
