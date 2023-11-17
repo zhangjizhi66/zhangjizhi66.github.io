@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>LaBr3wave</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>MNTbackground</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14579,7 +14579,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="LaBr3-%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E7%AE%97%E6%B3%95">LaBr3 &#27874;&#24418;&#35299;&#22534;&#31215;&#31639;&#27861;<a class="anchor-link" href="#LaBr3-%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E7%AE%97%E6%B3%95">&#182;</a></h1>
+<h1 id="MNT-%E5%AE%9E%E9%AA%8C%E8%83%8C%E6%99%AF">MNT &#23454;&#39564;&#32972;&#26223;<a class="anchor-link" href="#MNT-%E5%AE%9E%E9%AA%8C%E8%83%8C%E6%99%AF">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -14590,42 +14590,194 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="%E6%95%B0%E6%8D%AE">&#25968;&#25454;<a class="anchor-link" href="#%E6%95%B0%E6%8D%AE">&#182;</a></h3><ul>
-<li>每轮约 20 万个长波形，每个波形 20000 个点</li>
+<h2 id="%E5%AE%9E%E9%AA%8C%E8%83%8C%E6%99%AF">&#23454;&#39564;&#32972;&#26223;<a class="anchor-link" href="#%E5%AE%9E%E9%AA%8C%E8%83%8C%E6%99%AF">&#182;</a></h2><h3 id="%E6%A0%B8%E5%8F%8D%E5%BA%94%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%8E%E5%88%86%E7%B1%BB">&#26680;&#21453;&#24212;&#30340;&#36807;&#31243;&#19982;&#20998;&#31867;<a class="anchor-link" href="#%E6%A0%B8%E5%8F%8D%E5%BA%94%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%8E%E5%88%86%E7%B1%BB">&#182;</a></h3><p><img src="img/Nuclear_reaction.jpeg" style="zoom:40%"></p>
+<ul>
+<li><p>独立粒子阶段</p>
+<ul>
+<li>卢瑟福散射、库仑散射或库仑激发<ul>
+<li>原子核之间没有直接接触，仅有库仑场发挥作用</li>
+<li>弹靶的碰撞参量较大</li>
 </ul>
-<h3 id="%E8%A7%A6%E5%8F%91%E9%80%BB%E8%BE%91">&#35302;&#21457;&#36923;&#36753;<a class="anchor-link" href="#%E8%A7%A6%E5%8F%91%E9%80%BB%E8%BE%91">&#182;</a></h3><ul>
-<li>快速滤波 (fastfilter) 过阈触发<ul>
-<li>前 1000 个点无信号，用于评估噪声水平</li>
-<li>取噪声水平的若干倍为阈值</li>
+</li>
+<li>形状弹性散射 shape elastic scattering<ul>
+<li>独立粒子阶段形成的弹性散射</li>
 </ul>
 </li>
 </ul>
-<h3 id="%E6%A0%87%E5%87%86%E6%B3%A2%E5%BD%A2">&#26631;&#20934;&#27874;&#24418;<a class="anchor-link" href="#%E6%A0%87%E5%87%86%E6%B3%A2%E5%BD%A2">&#182;</a></h3><ul>
-<li>筛选无堆积的波形<ul>
-<li>粗筛：触发前后一定范围不存在其他触发（指快速滤波触发）</li>
-<li>细筛：计算波形半高宽，画出峰宽-峰高的二维关联图，用 TCutG 选取密集条带区域，该区域为良好的无堆积事件</li>
-<li>p.s. 条带外的散点来自非常紧密的堆积事件，它们无法用快速滤波分辨出来</li>
+</li>
+<li><p>复合系统阶段</p>
+<ul>
+<li>直接作用 direct reaction<ul>
+<li>弹核较轻，靶核较重</li>
+<li>弹核将能量交给靶核的一个或多个核子，或引起靶核的集体激发，随后基本完整飞出</li>
+<li>时间尺度快，约$10^{- 22}s$，相当于具有费米动量的核子穿越整个原子核的时间</li>
+<li>在质心系中不是90度对称的</li>
 </ul>
 </li>
-<li>求解波形形状随波形高度的变化关系<ul>
-<li>计算波形最高点 xmax ymax</li>
-<li>计算最高点 xmax 附近某点 x0 处的相对高度 y0/ymax</li>
-<li>对于固定的 x0，画出 y0/ymax : ymax 二维关联图，用二次函数拟合</li>
-<li>这样，只要给定 ymax，就能画出相应的标准波形</li>
+<li>双核子系统 di- nuclear system<ul>
+<li>弹靶接触后形成di- nuclear system，两者之间存在一个neck</li>
+<li>生存时间短，约$10^{- 21}- 10^{- 20}s$，因此仅能达到部分热平衡</li>
+<li>一般在弹靶均较重的时候形成</li>
+</ul>
+</li>
+<li>双核子系统的分裂 quasi- fission / deep inelastic transfer / strongly damped collisions<ul>
+<li>双核子系统没有形成复合核，在达到热平衡之前重新分离（平衡前发射）</li>
+<li>弹靶分离后大致保持原来的特征，称为类弹和类靶</li>
+<li>在参与碰撞的原子核之间进行质子中子的快速分配，时间尺度约$10^{- 22}s$，分配之后的状态称为N/Z平衡</li>
+<li>兼具直接作用与复合核的特点</li>
+<li><ul>
+<li>在质心系中不是90度对称的，多数产物向前飞出（也有部分体现出类轨道行为orbiting- like behavior，向负角度发射）</li>
+</ul>
+</li>
+<li><ul>
+<li>产物的动能与出射道的Coulomb barrier接近，与束流能量无关</li>
 </ul>
 </li>
 </ul>
-<h3 id="%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E4%B8%8E%E6%8B%9F%E5%90%88">&#27874;&#24418;&#35299;&#22534;&#31215;&#19982;&#25311;&#21512;<a class="anchor-link" href="#%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E4%B8%8E%E6%8B%9F%E5%90%88">&#182;</a></h3><ul>
-<li>将原始长波形分段，堆积的信号一起拟合，无堆积的信号相互分离</li>
-<li>以触发位置为初值，进行第一次拟合</li>
-<li>计算拟合结果与原波形的残差，对残差图寻峰，在峰值处尝试添加新峰拟合<ul>
-<li>添加新峰，要求残差大于噪声水平，且新峰拟合后的位置不能与已有峰重合，且必须将 chi2/ndf 降低到一定比例以下</li>
-<li>若以上条件不满足，则选取残差的另一峰值尝试</li>
-<li>若确定添加新峰，则再次计算拟合残差，重复本步骤</li>
-<li>若所有残差峰值处都不能添加新峰，则结束循环</li>
+</li>
+<li>复合核<ul>
+<li>在直接作用或双核子系统的基础上，弹靶进一步熔合形成复合核</li>
+<li>生存时间长，约$10^{- 19}- 10^{- 16}s$，可以达到热平衡</li>
+<li>复合核的性质与弹靶种类及其形成过程都没有关系</li>
+<li>产物的动能与出射道的库仑势垒接近，与束流能量无关</li>
+<li>退激方式（能量由低到高）</li>
+<li><ul>
+<li>熔合蒸发反应：1- 10MeV/A，可以布居高自旋态</li>
 </ul>
 </li>
-<li>最后再次检查并剔除位置重合的峰（添加新峰可能会影响原有峰位）</li>
+<li><ul>
+<li>熔合裂变：复合核的裂变</li>
+</ul>
+</li>
+<li><ul>
+<li>散裂反应：大于40MeV/A，发射若干块小的核子集团</li>
+</ul>
+</li>
+<li><ul>
+<li>碎裂反应：核子全部被打散</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>复合核弹性散射 compound elastic scattering<ul>
+<li>复合核发射一个与弹核完全相同（结构、能量）的粒子，即复合核阶段形成的弹性散射</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="%E5%A4%9A%E6%A0%B8%E5%AD%90%E8%BD%AC%E7%A7%BB">&#22810;&#26680;&#23376;&#36716;&#31227;<a class="anchor-link" href="#%E5%A4%9A%E6%A0%B8%E5%AD%90%E8%BD%AC%E7%A7%BB">&#182;</a></h3><ul>
+<li>发生在双核子系统阶段</li>
+<li>根据核子转移数目、能量耗散强度等进行分类<ul>
+<li>准弹性散射 quasi elastic scattering （也可能在双核子系统形成之前，或许没有明确的界限）</li>
+<li>深度非弹性散射 deep inelastic scattering</li>
+<li>准裂变 quasi- fission</li>
+</ul>
+</li>
+</ul>
+<h3 id="%E9%87%8D%E6%A0%B8%E4%B8%A4%E4%BD%93%E5%8F%8D%E5%BA%94">&#37325;&#26680;&#20004;&#20307;&#21453;&#24212;<a class="anchor-link" href="#%E9%87%8D%E6%A0%B8%E4%B8%A4%E4%BD%93%E5%8F%8D%E5%BA%94">&#182;</a></h3><ul>
+<li><p>准弹性散射</p>
+<ul>
+<li>碰撞参量大，产物与弹靶相同或相差几个核子，同时被轻微地激发</li>
+<li>细节包括库仑激发、非弹性散射以及少量核子的转移</li>
+<li>布居的态较低，观测到的gamma多重性低</li>
+</ul>
+</li>
+<li><p>熔合裂变</p>
+<ul>
+<li>碰撞参量小，形成复合核；随后复合核在很高的角动量下发生裂变</li>
+<li>碎片分布以对称裂变的产物为中心，分布较广</li>
+<li>碎片被强烈地激发，随后经历粒子发射和高多重性的gamma退激</li>
+</ul>
+</li>
+<li><p>深度非弹性散射</p>
+<ul>
+<li>中等碰撞参量，大范围的质量、能量、角动量转移</li>
+</ul>
+</li>
+</ul>
+<h3 id="%E5%BA%93%E4%BB%91%E5%8A%BF%E5%9E%92%E4%B8%8E%E5%8F%8D%E5%BA%94%E5%8A%BF%E5%9E%92">&#24211;&#20177;&#21183;&#22418;&#19982;&#21453;&#24212;&#21183;&#22418;<a class="anchor-link" href="#%E5%BA%93%E4%BB%91%E5%8A%BF%E5%9E%92%E4%B8%8E%E5%8F%8D%E5%BA%94%E5%8A%BF%E5%9E%92">&#182;</a></h3><ul>
+<li>库仑势垒$$V_c=\frac{Z_pZ_te^2}{R_C}$$, $$R_C=r_{0}(A_p^{1/3}+A_t^{1/3})$$</li>
+<li>反应势垒<ul>
+<li>原子核半径：电荷密度下降到中心密度的一半处，$$R_i=1.12A_i^{1/3}- 0.94A_i^{- 1/3}$$，$$i=projectile/target$$</li>
+<li>反应中的有效核间距：由实验给出，$$R_{int}=R_p+R_t+3 fm$$</li>
+<li>反应势垒：$$B_{int}=\frac{Z_pZ_te^2}{R_{int}}$$</li>
+</ul>
+</li>
+</ul>
+<h3 id="%E4%B8%A4%E4%BD%93%E5%8A%A8%E5%8A%9B%E5%AD%A6">&#20004;&#20307;&#21160;&#21147;&#23398;<a class="anchor-link" href="#%E4%B8%A4%E4%BD%93%E5%8A%A8%E5%8A%9B%E5%AD%A6">&#182;</a></h3><ul>
+<li>生成核的动量由动量守恒给出：$$P_{1,2}=\frac{P_0 \sin{\theta_{2,1}}}{\sin(\theta_1+\theta_2)}$$，其中$P_0$为束流动量，$P_{1,2}$为核子动量，$\theta_{1,2}$为核子散射角</li>
+</ul>
+<h3 id="%E6%93%A6%E8%BE%B9%E8%A7%92">&#25830;&#36793;&#35282;<a class="anchor-link" href="#%E6%93%A6%E8%BE%B9%E8%A7%92">&#182;</a></h3><ul>
+<li>核反应截面在擦边角(grazing angle)处最大，小于（对TLF为大于）擦边角则仅发生库仑散射或卢瑟福散射</li>
+<li>碰撞参数d与散射角&theta;的关系为$$d=\frac{Z_tZ_pe^2}{4\pi\epsilon_0E_k}(1+\csc\frac{\theta}{2})$$，其中$Z_p,Z_t$为原子序数，$E_k$为动能</li>
+<li>当碰撞参数与两核子半径之和相等时认为它们发生接触，则$$d=1.2(A_t^{\frac13}+A_p^{\frac13})\ fm$$，由此可以定出两特定核子的擦边角</li>
+</ul>
+<h2 id="%E7%90%86%E8%AE%BA%E6%A8%A1%E5%9E%8B">&#29702;&#35770;&#27169;&#22411;<a class="anchor-link" href="#%E7%90%86%E8%AE%BA%E6%A8%A1%E5%9E%8B">&#182;</a></h2><h3 id="GRAZING">GRAZING<a class="anchor-link" href="#GRAZING">&#182;</a></h3><ul>
+<li>用于计算反应截面</li>
+<li>将弹靶描述为在球形附近振动的独立核子</li>
+<li>只考虑在擦边角附近的反应，更小碰撞参量下的 quasi- fission 等反应没有考虑</li>
+<li>没有考虑产物的裂变，改进代码为GRAZING- F<ul>
+<li>对于136Xe+208Pb @ Ecm=450MeV，GRAZING和GRAZING- F的结果相同，表明裂变不是其产物主要的退激方式</li>
+</ul>
+</li>
+<li>形状因子<ul>
+<li>用于描述单个核子在弹靶之间转移的行为</li>
+<li>调节中子的形状因子：改变截面- N单峰曲线的宽度</li>
+<li>调节质子的形状因子：改变截面- N单峰曲线的峰值</li>
+</ul>
+</li>
+</ul>
+<h3 id="Time-Dependent-Hartree--Fock">Time Dependent Hartree- Fock<a class="anchor-link" href="#Time-Dependent-Hartree--Fock">&#182;</a></h3><ul>
+<li>弹靶考虑为球形；核子是独立的，处在单粒子轨道上</li>
+<li>与GRAZING相比。考虑了深度非弹以及准裂变道</li>
+<li>计算得到质子和中子分别出现在PLF和TLF中的概率，进而得到截面<ul>
+<li>N个中子和Z个质子出现在PLF中的概率（碰撞参量为b）：$$P_{Z,N}(b)=P_Z(b)P_N(b)$$</li>
+<li>反应截面：$$\sigma(Z,N)=\int_{b_{min}}^{\infty}2\pi{b} P_{Z,N}(b)db$$，$b_{min}$为不发生弹靶熔合的最小碰撞参量</li>
+</ul>
+</li>
+<li>TDHF与GRAZING的结果较为符合；但在质子转移数较多时，两者与实验结果均偏离较大，没有很好的解释（2015）</li>
+</ul>
+<h3 id="Langevin-(by-Zagrebaev-and-Greiner)">Langevin (by Zagrebaev and Greiner)<a class="anchor-link" href="#Langevin-(by-Zagrebaev-and-Greiner)">&#182;</a></h3><ul>
+<li>强调了壳效应，认为闭壳处的势阱是PLF/TLF形成的驱动力</li>
+<li>反应过程中系统势能与核间距、形变以及弹靶的质量差异有关；因此这些变量的演化遵循能量最低原理</li>
+<li>描述系统的演化采用朗之万形式的方程<ul>
+<li>$$\frac{d\eta_Z}{dt}=\frac{2}{Z_{CN}}D_Z^1+\frac{2}{D_{CN}}\sqrt{D_Z^2}\Gamma(t)$$</li>
+<li>$$\frac{d\eta_N}{dt}=\frac{2}{N_{CN}}D_N^1+\frac{2}{D_{CN}}\sqrt{D_N^2}\Gamma(t)$$<ul>
+<li>$Z_{CN},N_{CN}$为复合核的核子数目</li>
+<li>$D^1,D^2$为输运系数</li>
+<li>$\eta_Z,\eta_N$为质子、中子的质量偏移：$\eta_Z=\frac{2Z- Z_{CN}}{Z_{CN}}$，Z为一个碎片的质子数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>模型假设多核子转移是一系列单核子转移的组合，则输运系数可以表示为跃迁概率的线性组合<ul>
+<li>$$D_{Z,N}^1=\lambda_{Z,N}^{(+)}(A\rightarrow{A}+1)- \lambda_{Z,N}^{(- )}(A\rightarrow{A}- 1)$$</li>
+<li>$$D_{Z,N}^2=\frac12[\lambda_{Z,N}^{(+)}(A\rightarrow{A}+1)+\lambda_{Z,N}^{(- )}(A\rightarrow{A}- 1)]$$<ul>
+<li>跃迁概率由能级密度给出：$$\lambda_{Z,N}^{(\pm)}=\lambda_0\sqrt{\frac{\rho(A\pm{1})}{\rho{A}}}$$，其中能级密度$\rho\sim{e}^{\sqrt{aE^- }}$，a为常数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>primary product截面公式<ul>
+<li>$$\frac{d^2\sigma_{Z,N}}{d\Omega{dE}}(E,\theta)=\int_0^\infty{bdb}\frac{\Delta{N}_{Z,N}(b,E,\theta)}{N_{tot}(b)}\frac1{\sin\theta\Delta\theta\Delta{E}}$$<ul>
+<li>$\Delta{N}_{Z,N}(b,E,\theta)$：在碰撞参量b下生成$Z,N,E+\Delta{E},\theta+\Delta\theta$的核的数目，其中$\theta$为质心系下的坐标</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>primary product的退激通过统计模型计算</li>
+<li>模型在描述纯质子转移时，与实验结果符合较好；描述纯中子转移时截面预测稍偏高</li>
+<li>模型将核子转移分为“对称化”和“非对称化”<ul>
+<li>48Ca+248Cm：对称化，248Cm倾向于208Pb</li>
+<li>238U+248Cm：非对称化，238U倾向于208Pb</li>
+</ul>
+</li>
+</ul>
+<h3 id="Di--Nuclear-System-model">Di- Nuclear System model<a class="anchor-link" href="#Di--Nuclear-System-model">&#182;</a></h3><ul>
+<li>将核子转移看作扩散过程</li>
+<li>计算单个核子的转移概率，再将其求和</li>
+<li>认为激发能按照质量比例在primary fragments之间分配</li>
 </ul>
 
 </div>
@@ -14661,7 +14813,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>2023年 11月 17日 星期五 11:26:54 CST
+<pre>2023年 11月 16日 星期四 11:34:06 CST
 
 </pre>
 </div>

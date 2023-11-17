@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>LaBr3wave</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>indexMNT</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14579,7 +14579,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="LaBr3-%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E7%AE%97%E6%B3%95">LaBr3 &#27874;&#24418;&#35299;&#22534;&#31215;&#31639;&#27861;<a class="anchor-link" href="#LaBr3-%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E7%AE%97%E6%B3%95">&#182;</a></h1>
+<h1 id="%E5%A4%9A%E6%A0%B8%E5%AD%90%E8%BD%AC%E7%A7%BB">&#22810;&#26680;&#23376;&#36716;&#31227;<a class="anchor-link" href="#%E5%A4%9A%E6%A0%B8%E5%AD%90%E8%BD%AC%E7%A7%BB">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -14590,42 +14590,14 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="%E6%95%B0%E6%8D%AE">&#25968;&#25454;<a class="anchor-link" href="#%E6%95%B0%E6%8D%AE">&#182;</a></h3><ul>
-<li>每轮约 20 万个长波形，每个波形 20000 个点</li>
+<ul>
+<li><a href="MNTbackground.html">实验背景</a></li>
+<li><a href="MNTfacility.html">实验装置</a></li>
+<li><a href="MNTanalysis.html">数据处理</a></li>
 </ul>
-<h3 id="%E8%A7%A6%E5%8F%91%E9%80%BB%E8%BE%91">&#35302;&#21457;&#36923;&#36753;<a class="anchor-link" href="#%E8%A7%A6%E5%8F%91%E9%80%BB%E8%BE%91">&#182;</a></h3><ul>
-<li>快速滤波 (fastfilter) 过阈触发<ul>
-<li>前 1000 个点无信号，用于评估噪声水平</li>
-<li>取噪声水平的若干倍为阈值</li>
-</ul>
-</li>
-</ul>
-<h3 id="%E6%A0%87%E5%87%86%E6%B3%A2%E5%BD%A2">&#26631;&#20934;&#27874;&#24418;<a class="anchor-link" href="#%E6%A0%87%E5%87%86%E6%B3%A2%E5%BD%A2">&#182;</a></h3><ul>
-<li>筛选无堆积的波形<ul>
-<li>粗筛：触发前后一定范围不存在其他触发（指快速滤波触发）</li>
-<li>细筛：计算波形半高宽，画出峰宽-峰高的二维关联图，用 TCutG 选取密集条带区域，该区域为良好的无堆积事件</li>
-<li>p.s. 条带外的散点来自非常紧密的堆积事件，它们无法用快速滤波分辨出来</li>
-</ul>
-</li>
-<li>求解波形形状随波形高度的变化关系<ul>
-<li>计算波形最高点 xmax ymax</li>
-<li>计算最高点 xmax 附近某点 x0 处的相对高度 y0/ymax</li>
-<li>对于固定的 x0，画出 y0/ymax : ymax 二维关联图，用二次函数拟合</li>
-<li>这样，只要给定 ymax，就能画出相应的标准波形</li>
-</ul>
-</li>
-</ul>
-<h3 id="%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E4%B8%8E%E6%8B%9F%E5%90%88">&#27874;&#24418;&#35299;&#22534;&#31215;&#19982;&#25311;&#21512;<a class="anchor-link" href="#%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E4%B8%8E%E6%8B%9F%E5%90%88">&#182;</a></h3><ul>
-<li>将原始长波形分段，堆积的信号一起拟合，无堆积的信号相互分离</li>
-<li>以触发位置为初值，进行第一次拟合</li>
-<li>计算拟合结果与原波形的残差，对残差图寻峰，在峰值处尝试添加新峰拟合<ul>
-<li>添加新峰，要求残差大于噪声水平，且新峰拟合后的位置不能与已有峰重合，且必须将 chi2/ndf 降低到一定比例以下</li>
-<li>若以上条件不满足，则选取残差的另一峰值尝试</li>
-<li>若确定添加新峰，则再次计算拟合残差，重复本步骤</li>
-<li>若所有残差峰值处都不能添加新峰，则结束循环</li>
-</ul>
-</li>
-<li>最后再次检查并剔除位置重合的峰（添加新峰可能会影响原有峰位）</li>
+<h3 id="%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB">&#25991;&#29486;&#38405;&#35835;<a class="anchor-link" href="#%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB">&#182;</a></h3><ul>
+<li><a href="EarlyExperiment.html">早期实验</a></li>
+<li><a href="paper/DobonThesis2003.html">Dobon: Studies of Neutron-Rich Nuclei Using Deep Inelastic Collisions</a></li>
 </ul>
 
 </div>
@@ -14661,7 +14633,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>2023年 11月 17日 星期五 11:26:54 CST
+<pre>2023年 11月 16日 星期四 16:19:42 CST
 
 </pre>
 </div>

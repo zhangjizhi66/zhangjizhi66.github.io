@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>LaBr3wave</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>EarlyExperiment</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14579,7 +14579,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="LaBr3-%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E7%AE%97%E6%B3%95">LaBr3 &#27874;&#24418;&#35299;&#22534;&#31215;&#31639;&#27861;<a class="anchor-link" href="#LaBr3-%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E7%AE%97%E6%B3%95">&#182;</a></h1>
+<h1 id="MNT-%E6%97%A9%E6%9C%9F%E5%AE%9E%E9%AA%8C">MNT &#26089;&#26399;&#23454;&#39564;<a class="anchor-link" href="#MNT-%E6%97%A9%E6%9C%9F%E5%AE%9E%E9%AA%8C">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -14590,42 +14590,109 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="%E6%95%B0%E6%8D%AE">&#25968;&#25454;<a class="anchor-link" href="#%E6%95%B0%E6%8D%AE">&#182;</a></h3><ul>
-<li>每轮约 20 万个长波形，每个波形 20000 个点</li>
+<h3 id="%E6%80%BB%E7%BB%93">&#24635;&#32467;<a class="anchor-link" href="#%E6%80%BB%E7%BB%93">&#182;</a></h3><ul>
+<li>丰中子的弹核有利于生成丰中子的产物</li>
+<li>能量较高时产物倾向于裂变，而非保持为丰中子的重核</li>
+<li>质子转移反应的截面预言偏离较大(GRAZING)</li>
+<li>比靶更重的产物(trans-target nuclei)截面比理论预言的更高(Langevin)</li>
+<li>利用壳效应合成丰中子核</li>
 </ul>
-<h3 id="%E8%A7%A6%E5%8F%91%E9%80%BB%E8%BE%91">&#35302;&#21457;&#36923;&#36753;<a class="anchor-link" href="#%E8%A7%A6%E5%8F%91%E9%80%BB%E8%BE%91">&#182;</a></h3><ul>
-<li>快速滤波 (fastfilter) 过阈触发<ul>
-<li>前 1000 个点无信号，用于评估噪声水平</li>
-<li>取噪声水平的若干倍为阈值</li>
+<h4 id="%E7%B2%92%E5%AD%90%E9%89%B4%E5%88%AB%E6%96%B9%E6%B3%95">&#31890;&#23376;&#37492;&#21035;&#26041;&#27861;<a class="anchor-link" href="#%E7%B2%92%E5%AD%90%E9%89%B4%E5%88%AB%E6%96%B9%E6%B3%95">&#182;</a></h4><ul>
+<li>望远镜法<ul>
+<li>对于重核无法达到足够的分辨</li>
+</ul>
+</li>
+<li>飞行时间法<ul>
+<li>现代普遍采用</li>
+</ul>
+</li>
+<li>离线放射性测量</li>
+</ul>
+<h3 id="%E5%AE%9E%E9%AA%8C">&#23454;&#39564;<a class="anchor-link" href="#%E5%AE%9E%E9%AA%8C">&#182;</a></h3><h4 id="%E6%97%A9%E6%9C%9F%E5%AE%9E%E9%AA%8C">&#26089;&#26399;&#23454;&#39564;<a class="anchor-link" href="#%E6%97%A9%E6%9C%9F%E5%AE%9E%E9%AA%8C">&#182;</a></h4><ul>
+<li><p>Lee et al, 1982</p>
+<ul>
+<li>248Cm</li>
+<li>16O @ 97MeV; 18O @ 98MeV; 20Ne @ 115MeV; 22Ne @ 116MeV</li>
+<li>通过放射性测量确定产物截面</li>
+<li>截面随中子数的分布有一峰值；弹核为18O时，相比16O，这一峰值要高2个中子<ul>
+<li>表明丰中子的弹核有利于生成丰中子的产物</li>
 </ul>
 </li>
 </ul>
-<h3 id="%E6%A0%87%E5%87%86%E6%B3%A2%E5%BD%A2">&#26631;&#20934;&#27874;&#24418;<a class="anchor-link" href="#%E6%A0%87%E5%87%86%E6%B3%A2%E5%BD%A2">&#182;</a></h3><ul>
-<li>筛选无堆积的波形<ul>
-<li>粗筛：触发前后一定范围不存在其他触发（指快速滤波触发）</li>
-<li>细筛：计算波形半高宽，画出峰宽-峰高的二维关联图，用 TCutG 选取密集条带区域，该区域为良好的无堆积事件</li>
-<li>p.s. 条带外的散点来自非常紧密的堆积事件，它们无法用快速滤波分辨出来</li>
+</li>
+<li><p>Hoffman et al, 1985</p>
+<ul>
+<li>248Cm</li>
+<li>40Ca, 48Ca, 多种能量</li>
+<li>通过放射性测量确定产物截面</li>
+<li>调节束流能量获得激发函数（截面随能量的变化）</li>
+<li>激发函数的峰值仅比反应势垒高5%；更高能量下产物裂变的概率增加，截面降低</li>
 </ul>
 </li>
-<li>求解波形形状随波形高度的变化关系<ul>
-<li>计算波形最高点 xmax ymax</li>
-<li>计算最高点 xmax 附近某点 x0 处的相对高度 y0/ymax</li>
-<li>对于固定的 x0，画出 y0/ymax : ymax 二维关联图，用二次函数拟合</li>
-<li>这样，只要给定 ymax，就能画出相应的标准波形</li>
+<li><p>Schadel et al, 1978, 1982</p>
+<ul>
+<li>238U, 248Cm</li>
+<li>238U @ 1761MeV</li>
+<li>通过放射性测量确定产物截面</li>
+<li>248Cm作靶时，相比238U，Cf和Fm之间的同位素截面高几个数量级；对于Fm的同位素，截面峰值出现在254Fm，对应4个质子和2个中子的转移</li>
 </ul>
 </li>
 </ul>
-<h3 id="%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E4%B8%8E%E6%8B%9F%E5%90%88">&#27874;&#24418;&#35299;&#22534;&#31215;&#19982;&#25311;&#21512;<a class="anchor-link" href="#%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E4%B8%8E%E6%8B%9F%E5%90%88">&#182;</a></h3><ul>
-<li>将原始长波形分段，堆积的信号一起拟合，无堆积的信号相互分离</li>
-<li>以触发位置为初值，进行第一次拟合</li>
-<li>计算拟合结果与原波形的残差，对残差图寻峰，在峰值处尝试添加新峰拟合<ul>
-<li>添加新峰，要求残差大于噪声水平，且新峰拟合后的位置不能与已有峰重合，且必须将 chi2/ndf 降低到一定比例以下</li>
-<li>若以上条件不满足，则选取残差的另一峰值尝试</li>
-<li>若确定添加新峰，则再次计算拟合残差，重复本步骤</li>
-<li>若所有残差峰值处都不能添加新峰，则结束循环</li>
+<h4 id="%E9%AA%8C%E8%AF%81GRAZING%E7%9A%84%E5%AE%9E%E9%AA%8C">&#39564;&#35777;GRAZING&#30340;&#23454;&#39564;<a class="anchor-link" href="#%E9%AA%8C%E8%AF%81GRAZING%E7%9A%84%E5%AE%9E%E9%AA%8C">&#182;</a></h4><ul>
+<li><p>Szilner et al, 2007</p>
+<ul>
+<li>96Zr, 薄靶</li>
+<li>40Ca @ Elab=152MeV</li>
+<li>用PRISMA磁谱仪鉴别PLF，包括TOF谱仪和望远镜</li>
+<li>将K和Ca同位素截面与GRAZING的结果比较（对应纯中子转移以及1个质子的转移），符合较好</li>
 </ul>
 </li>
-<li>最后再次检查并剔除位置重合的峰（添加新峰可能会影响原有峰位）</li>
+<li><p>Corradi et al, 1999</p>
+<ul>
+<li>238U, 200ug/cm2</li>
+<li>64Ni @ Elab=390MeV</li>
+<li>TOF谱仪+望远镜</li>
+<li>计算PLF截面：对角分布和Q值积分（对Q值积分可能相当于对PLF能量积分）</li>
+<li>与GRAZING的结果相比，纯中子转移符合较好；随着质子转移数增加，实验和理论的偏离变大（理论截面偏小；同时对于PLF的质子剥离反应，其峰值点偏大）</li>
+</ul>
+</li>
+<li><p>Watanabe et al, 2013</p>
+<ul>
+<li>198Pt</li>
+<li>136Xe @ 1088MeV</li>
+<li>用VAMOS++磁谱仪鉴别PLF；用EXOGAM阵列探测gamma</li>
+<li>计算了中子蒸发后的截面分布，并与GRAZING的结果比较<ul>
+<li>理论截面分布在某个区域出现低谷，被认为是壳效应的影响；这种低谷在中子蒸发前的理论截面分布中没有出现，在实验中也没有观测到；但低谷对应的中子数约为70，并不是幻数</li>
+<li>PLF的质子剥离截面与实验符合较好，而质子俘获截面被严重低估了</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="%E9%AA%8C%E8%AF%81Langevin%E6%A8%A1%E5%9E%8B(by-Zagrebaev-and-Greiner)%E7%9A%84%E5%AE%9E%E9%AA%8C">&#39564;&#35777;Langevin&#27169;&#22411;(by Zagrebaev and Greiner)&#30340;&#23454;&#39564;<a class="anchor-link" href="#%E9%AA%8C%E8%AF%81Langevin%E6%A8%A1%E5%9E%8B(by-Zagrebaev-and-Greiner)%E7%9A%84%E5%AE%9E%E9%AA%8C">&#182;</a></h4><ul>
+<li><p>Loveland et al, 2011</p>
+<ul>
+<li>186W</li>
+<li>160Gd @ Ecm=462MeV</li>
+<li>产物用Mylar和铝膜收集，随后进行放射性测量；因此稳定核以及短寿命核没有被鉴别</li>
+<li>比靶更重的产物(trans-target nuclei)截面比理论预言的高出约一个数量级</li>
+</ul>
+</li>
+<li><p>Comas et al, 2013</p>
+<ul>
+<li>207Pb</li>
+<li>64Ni @ 234.7-289.4MeV</li>
+<li>装置：SHIP；与束流夹角2度以内的产物才能被探测</li>
+<li>比靶更重的产物(trans-target nuclei)截面比理论预言的更高</li>
+</ul>
+</li>
+<li><p>Krolas et al</p>
+<ul>
+<li>208Pb，厚靶</li>
+<li>64Ni @ Ecm=350MeV</li>
+<li>用OSIRIS阵列探测gamma，能够鉴别稳定核和短寿命核（在束），以及长寿命核（离线）</li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -14661,7 +14728,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>2023年 11月 17日 星期五 11:26:54 CST
+<pre>2023年 11月 16日 星期四 16:32:37 CST
 
 </pre>
 </div>

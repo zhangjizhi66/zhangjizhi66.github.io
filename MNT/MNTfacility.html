@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>CSNS202311_Fe_spec</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>MNTfacility</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14579,7 +14579,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="LaBr3-%E8%83%BD%E8%B0%B1">LaBr3 &#33021;&#35889;<a class="anchor-link" href="#LaBr3-%E8%83%BD%E8%B0%B1">&#182;</a></h1>
+<h1 id="MNT-%E5%AE%9E%E9%AA%8C%E8%A3%85%E7%BD%AE">MNT &#23454;&#39564;&#35013;&#32622;<a class="anchor-link" href="#MNT-%E5%AE%9E%E9%AA%8C%E8%A3%85%E7%BD%AE">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -14590,55 +14590,43 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="img/nFe_spec.png" style="zoom:20%"></p>
-<h3 id="%E7%89%B9%E5%BE%81%E5%B3%B0%E8%AF%86%E5%88%AB">&#29305;&#24449;&#23792;&#35782;&#21035;<a class="anchor-link" href="#%E7%89%B9%E5%BE%81%E5%B3%B0%E8%AF%86%E5%88%AB">&#182;</a></h3><ul>
-<li><p>$^{139}La(n,n'\gamma)^{139}La$</p>
+<p><img src="img/7tu6fe3dfy64rc.png" style="zoom:80%"></p>
 <ul>
-<li>165.8 keV</li>
-<li>1043.1 keV</li>
-</ul>
+<li><p>束流：136Xe @ 1088MeV（作为参考，本实验中库仑势垒680MeV）</p>
 </li>
-<li><p>$^{79}Br(n,n'\gamma)^{79}Br$</p>
-<ul>
-<li>217.1 keV</li>
-<li>261.4 keV</li>
-<li>306.5 keV</li>
-</ul>
+<li><p>靶：198Pt</p>
 </li>
-<li><p>$^{81}Br(n,n'\gamma)^{81}Br$</p>
-<ul>
-<li>276.4 keV</li>
-</ul>
-</li>
-<li><p>$^{56}Fe(n,n'\gamma)^{56}Fe$</p>
-<ul>
-<li>846.8 keV</li>
-<li>1238.3 keV</li>
-</ul>
-</li>
-<li><p>$^{54}Fe(n,n'\gamma)^{54}Fe$</p>
-<ul>
-<li>1408.1 keV</li>
-</ul>
+<li><p>探测阵列：GRETINA + CHICO2 @ Argonne National Laboratory</p>
 </li>
 </ul>
-<p>108
-123
-166<em>
-196
-217</em>
-261<em>
-277</em>
-307*</p>
-<p>383
-475(thermal)
-534(thermal)
-568<em>
-847</em>
-1042<em>
-1238</em>
-1408*
-1798</p>
+<h3 id="GRETINA">GRETINA<a class="anchor-link" href="#GRETINA">&#182;</a></h3><p>根据 gamma 与物质相互作用的原理，重建其在探测器中的径迹(tracking)</p>
+<p>在数据中 gamma 的记录方式有两种：</p>
+<ul>
+<li><p>gtk类型，即 GRETINA 对 gamma 进行 tracking 的结果</p>
+</li>
+<li><p>gamma类型，不使用 tracking 的结果，而是将每块 HPGe 作为独立的探测器</p>
+</li>
+</ul>
+<p><img src="img/GRETINA_det_BIG.jpg" style="zoom:70%">
+<img src="img/OIP-C.png" style="zoom:90%">
+<img src="img/Canvas_1.png" style="zoom:80%"></p>
+<h3 id="CHICO-(Compact-Heavy-Ion-COunter)-/-CHICO2">CHICO (Compact Heavy Ion COunter) / CHICO2<a class="anchor-link" href="#CHICO-(Compact-Heavy-Ion-COunter)-/-CHICO2">&#182;</a></h3><ul>
+<li><p>CHICO 与 GammaSphere 耦合，主要用来探测两体反应中生成的重离子的方位和时间信息；探测器选用PPAC(Parallel Plate Avalanche Counter)</p>
+</li>
+<li><p>CHICO采用十角对称的布局：20片梯形PPAC，分成两个全同的半球，耦合在与束流垂直的平面上(<math>\theta=90^\circ</math>)；整体能够覆盖4&pi;立体角的69%。</p>
+</li>
+<li><p>PPAC阳极以9.3°的分辨测量方位角&phi;，阴极以1°的分辨测量极角&theta;，与 Gammasphere 的位置分辨匹配</p>
+</li>
+<li><p>阳极：在方位角&phi;方向分割为互相绝缘的两部分，面积分别占1/3和2/3；由于两体动力学中出射核子一定共面（忽略轻粒子的发射），使得方位角&phi;的分辨率由阳极较小的部分所覆盖的方位角决定，约为9.3°，减少了电子学通道的数目</p>
+</li>
+<li><p>CHICO2：为了与 GRETINA 的位置分辨匹配，CHICO2 采用了像素化(pixelated)的设计，极角&theta;的分辨提升至0.5°，方位角&phi;的分辨提升至1.4°</p>
+</li>
+</ul>
+<p><img src="img/CHICO三维结构.png" style="zoom:80%">
+<img src="img/CHICO侧视图.png" style="zoom:80%">
+<img src="img/PPAC阳极.png" style="zoom:80%">
+<img src="img/PPAC阳极侧面.png" style="zoom:90%">
+<img src="img/D7rrf8ckanci.png" style="zoom:80%"></p>
 
 </div>
 </div>
@@ -14673,7 +14661,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>2023年 10月 29日 星期日 20:21:59 CST
+<pre>2023年 11月 16日 星期四 16:12:00 CST
 
 </pre>
 </div>

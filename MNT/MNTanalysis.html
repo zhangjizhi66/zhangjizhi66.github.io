@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>LaBr3wave</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>MNTanalysis</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14579,7 +14579,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="LaBr3-%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E7%AE%97%E6%B3%95">LaBr3 &#27874;&#24418;&#35299;&#22534;&#31215;&#31639;&#27861;<a class="anchor-link" href="#LaBr3-%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E7%AE%97%E6%B3%95">&#182;</a></h1>
+<h1 id="MNT-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90">MNT &#25968;&#25454;&#20998;&#26512;<a class="anchor-link" href="#MNT-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -14590,42 +14590,108 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="%E6%95%B0%E6%8D%AE">&#25968;&#25454;<a class="anchor-link" href="#%E6%95%B0%E6%8D%AE">&#182;</a></h3><ul>
-<li>每轮约 20 万个长波形，每个波形 20000 个点</li>
-</ul>
-<h3 id="%E8%A7%A6%E5%8F%91%E9%80%BB%E8%BE%91">&#35302;&#21457;&#36923;&#36753;<a class="anchor-link" href="#%E8%A7%A6%E5%8F%91%E9%80%BB%E8%BE%91">&#182;</a></h3><ul>
-<li>快速滤波 (fastfilter) 过阈触发<ul>
-<li>前 1000 个点无信号，用于评估噪声水平</li>
-<li>取噪声水平的若干倍为阈值</li>
+<h3 id="Chico-%E5%92%8C-gamma-%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%97%B6%E9%97%B4%E5%88%86%E5%B8%83%E7%89%B9%E7%82%B9">Chico &#21644; gamma &#20107;&#20214;&#30340;&#26102;&#38388;&#20998;&#24067;&#29305;&#28857;<a class="anchor-link" href="#Chico-%E5%92%8C-gamma-%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%97%B6%E9%97%B4%E5%88%86%E5%B8%83%E7%89%B9%E7%82%B9">&#182;</a></h3><ul>
+<li><p>Chico 事件经过筛选，仅保留有 2 片 ppac 点火的事件</p>
+</li>
+<li><p>用相邻 Chico 事件的 timestamp(ns) 相减，得到时间差的谱</p>
+<ul>
+<li>表明数据中 Chico 事件之间最短时间间隔为 40 us</li>
 </ul>
 </li>
 </ul>
-<h3 id="%E6%A0%87%E5%87%86%E6%B3%A2%E5%BD%A2">&#26631;&#20934;&#27874;&#24418;<a class="anchor-link" href="#%E6%A0%87%E5%87%86%E6%B3%A2%E5%BD%A2">&#182;</a></h3><ul>
-<li>筛选无堆积的波形<ul>
-<li>粗筛：触发前后一定范围不存在其他触发（指快速滤波触发）</li>
-<li>细筛：计算波形半高宽，画出峰宽-峰高的二维关联图，用 TCutG 选取密集条带区域，该区域为良好的无堆积事件</li>
-<li>p.s. 条带外的散点来自非常紧密的堆积事件，它们无法用快速滤波分辨出来</li>
-</ul>
-</li>
-<li>求解波形形状随波形高度的变化关系<ul>
-<li>计算波形最高点 xmax ymax</li>
-<li>计算最高点 xmax 附近某点 x0 处的相对高度 y0/ymax</li>
-<li>对于固定的 x0，画出 y0/ymax : ymax 二维关联图，用二次函数拟合</li>
-<li>这样，只要给定 ymax，就能画出相应的标准波形</li>
+<p><img src="img/74u8dudhw7jh3.png" style="zoom:80%"></p>
+<ul>
+<li>将 Chico 事件 +- 20 us 范围内的 gamma 时间填入 histogram （以 Chico 的时间为零点），得到 gamma 的时间谱<ul>
+<li>表明数据中前一 Chico + 1.5 us 至后一 Chico - 1.2 us 的时间范围内，没有 gamma 事件</li>
+<li>因此将 1 个 Chico 事件，以及其 -1.2 到 +1.5 us 范围内的所有 gamma 事件，打包为 1 个 coincidence</li>
 </ul>
 </li>
 </ul>
-<h3 id="%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E4%B8%8E%E6%8B%9F%E5%90%88">&#27874;&#24418;&#35299;&#22534;&#31215;&#19982;&#25311;&#21512;<a class="anchor-link" href="#%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E4%B8%8E%E6%8B%9F%E5%90%88">&#182;</a></h3><ul>
-<li>将原始长波形分段，堆积的信号一起拟合，无堆积的信号相互分离</li>
-<li>以触发位置为初值，进行第一次拟合</li>
-<li>计算拟合结果与原波形的残差，对残差图寻峰，在峰值处尝试添加新峰拟合<ul>
-<li>添加新峰，要求残差大于噪声水平，且新峰拟合后的位置不能与已有峰重合，且必须将 chi2/ndf 降低到一定比例以下</li>
-<li>若以上条件不满足，则选取残差的另一峰值尝试</li>
-<li>若确定添加新峰，则再次计算拟合残差，重复本步骤</li>
-<li>若所有残差峰值处都不能添加新峰，则结束循环</li>
+<p><img src="img/D573h3g89dsi2.png" style="zoom:80%"></p>
+<h3 id="Chico%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86">Chico&#25968;&#25454;&#22788;&#29702;<a class="anchor-link" href="#Chico%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86">&#182;</a></h3><h4 id="%E4%B8%A4%E4%BD%93%E5%8A%A8%E5%8A%9B%E5%AD%A6">&#20004;&#20307;&#21160;&#21147;&#23398;<a class="anchor-link" href="#%E4%B8%A4%E4%BD%93%E5%8A%A8%E5%8A%9B%E5%AD%A6">&#182;</a></h4><ul>
+<li>由 CHICO 测量出散射角（极角）后，生成核的动量可以根据动量守恒给出：<math>P_{1,2}=\frac{P_0 \sin{\theta_{2,1}}}{\sin(\theta_1+\theta_2)}</math>，其中<math>P_0</math>为束流动量，<math>P_{1,2}</math>为核子动量，<math>\theta_{1,2}</math>为核子散射角</li>
+<li>CHICO还可测量两核子的飞行时间差，进而给出质量：<math>m_{1,2}=\frac{\Delta TOF+M_{tot}d_{2,1}/P_{2,1}}{d_1/P_1+d_2/P_2}</math></li>
+<li>接下来就可计算核子的飞行速度，进而对其发射的 gamma 进行多普勒修正</li>
+</ul>
+<h4 id="%E5%A4%9A%E6%99%AE%E5%8B%92%E5%B1%95%E5%AE%BD%E4%B8%8E%E4%BF%AE%E6%AD%A3">&#22810;&#26222;&#21202;&#23637;&#23485;&#19982;&#20462;&#27491;<a class="anchor-link" href="#%E5%A4%9A%E6%99%AE%E5%8B%92%E5%B1%95%E5%AE%BD%E4%B8%8E%E4%BF%AE%E6%AD%A3">&#182;</a></h4><ul>
+<li>运动中的核子发射gamma射线，实际探测到的能量为<math>E_s=E\frac{\sqrt{1-\beta^2}}{1-\beta\cos\Theta}\approx{E}(1+\beta\cos\Theta)</math>，其中E为核子参考系中的gamma能量，Es为实验室参考系中的gamma能量，<math>\beta=v/c</math>为核子速度，&Theta;为gamma与核子速度方向的夹角。上面的近似仅当<math>\beta\leq0.05</math>时有效</li>
+</ul>
+<ul>
+<li>其中gamma与核子的夹角可用各自极坐标表出：<math>\cos\Theta=\sin\theta_R\sin\theta_\gamma(\cos\phi_R\cos\phi_\gamma+\sin\phi_R\sin\phi_\gamma)+\cos\theta_R\cos\theta_\gamma</math></li>
+</ul>
+<ul>
+<li>在探测器的立体角范围内，考虑到&Theta;和&beta;的不确定度，多普勒效应引起的谱线展宽为<math>(\frac{\Delta{E}}{E})^2=(\frac{\beta\sin\Theta}{1-\beta\cos\Theta})^2(\Delta\Theta)^2-(\frac{-\beta+\cos\Theta}{(1-\beta^2)(1-\cos\Theta)})^2(\Delta\beta)^2+(\frac{\Delta{E}}{E})_{intr}^2</math></li>
+</ul>
+<ul>
+<li>核子退激放出的瞬发 gamma 一定是在核子飞行时产生的，需要进行多普勒修正</li>
+<li>本实验中，距离核反应 30 ns 后的 gamma 判定为延迟 gamma，而核子飞行时间约为 5-20 ns 左右，因此延迟 gamma 不需进行多普勒修正</li>
+</ul>
+<h4 id="%E7%B1%BB%E9%9D%B6%E5%92%8C%E7%B1%BB%E5%BC%B9%E7%9A%84%E9%89%B4%E5%88%AB">&#31867;&#38774;&#21644;&#31867;&#24377;&#30340;&#37492;&#21035;<a class="anchor-link" href="#%E7%B1%BB%E9%9D%B6%E5%92%8C%E7%B1%BB%E5%BC%B9%E7%9A%84%E9%89%B4%E5%88%AB">&#182;</a></h4><ul>
+<li>进行多普勒修正需要首先确定核子的速度，只有使用了正确的核子进行修正才能还原出期待看到的 gamma 峰（例如想看136Ba的瞬发 gamma 就必须用类弹核进行修正）</li>
+<li>本实验的探测阵列没有进行粒子鉴别的模块；但在多核子转移中，弹靶大致还保留了原来的特征，因此有其他鉴别办法</li>
+<li>dTOF-散射角二维谱<ul>
+<li>左边为本次实验，其中的 cut 为类弹核；右边为文献给出的谱</li>
+<li>由于本实验能量更高，所以类靶和类弹被区分得更远</li>
 </ul>
 </li>
-<li>最后再次检查并剔除位置重合的峰（添加新峰可能会影响原有峰位）</li>
+</ul>
+<p><img src="img/6dh7rdgbyyfg7ytvbu.png" style="zoom:80%">
+<img src="img/TOF散射角二维谱.png" style="zoom:80%"></p>
+<ul>
+<li>改进：在不作弹靶鉴别的情况下就可以分别计算出两个碎片的质量，进而作出散射角-质量二维谱。在该二维谱上类弹类靶的界限更清晰，物理意义也比较清楚<ul>
+<li>注意：不作弹靶鉴别就不能修正碎片在靶内的能量损失（因为该修正公式对于类弹类靶是不同的），计算出的的质量分布中心分别为130和204.但这不影响弹靶鉴别</li>
+</ul>
+</li>
+</ul>
+<h3 id="%E5%BB%B6%E8%BF%9Fgamma%E7%9F%A9%E9%98%B5-delayed-delayed-gamma-matrix">&#24310;&#36831;gamma&#30697;&#38453; delayed-delayed gamma matrix<a class="anchor-link" href="#%E5%BB%B6%E8%BF%9Fgamma%E7%9F%A9%E9%98%B5-delayed-delayed-gamma-matrix">&#182;</a></h3><ul>
+<li><p>通过延迟gamma的符合关系，寻找在MNT中生成的核素</p>
+</li>
+<li><p>根据延迟gamma的定义容易推断出，从延迟gamma矩阵搭建的纲图，一定是从某一个isomer出发，终止于另一个isomer或基态</p>
+<ul>
+<li>本实验中，延迟gamma的定义是瞬发gamma时间分布中心的30ns之后产生的gamma</li>
+</ul>
+</li>
+<li><p>寻找方法</p>
+<ul>
+<li>从弹核和靶核着手，对它俩最低（也是最强）的gamma跃迁开窗，定位开窗谱中所有属于它俩的峰，进而尽可能地搭建它俩的纲图</li>
+<li>一般开窗谱中会留下一些不属于该核素的峰，于是通过这些峰（如反开窗）确定新的符合关系，然后在nndc的levels and gammas research中查找这符合关系可能属于哪个核，最后定位出一个新的核素</li>
+<li><ul>
+<li>即使输入三重符合关系，nndc一般也会给出多个候选核。对它们进行筛选时没有固定的原则，但一般其布居的最高态的自旋不会高于20，能量不超过3000～4000keV。对于较强的符合，对应的核素不会偏离弹靶很远</li>
+</ul>
+</li>
+<li>重复以上步骤，就可以逐步还原出所有出现的核素（只要它有isomer）</li>
+</ul>
+</li>
+<li><p>除弹靶之外，在本实验数据搭建的纲图中，大多数核素的gamma衰变只有一条衰变链</p>
+</li>
+<li><p>经过验证，交叉符合分析法对于延迟gamma矩阵基本无效，原因有：</p>
+<ul>
+<li>延迟gamma的总统计相对prompt而言很低</li>
+<li>要求一对核素都包含有isomer，这个要求并不容易满足</li>
+<li>由于中子发射，配对的核素的统计还要进一步降低</li>
+</ul>
+</li>
+</ul>
+<h4 id="596-keV-%E5%A4%84%E7%9A%84%E4%B8%89%E8%A7%92%E5%BD%A2%E5%B3%B0">596 keV &#22788;&#30340;&#19977;&#35282;&#24418;&#23792;<a class="anchor-link" href="#596-keV-%E5%A4%84%E7%9A%84%E4%B8%89%E8%A7%92%E5%BD%A2%E5%B3%B0">&#182;</a></h4><ul>
+<li>峰顶<ul>
+<li>初始产物通过中子发射退激，发射的中子对 HPGe 材料进行库仑激发；峰顶 596 keV 是 74Ge 的第一个激发态</li>
+</ul>
+</li>
+<li>高能方向的拖尾<ul>
+<li>库仑激发过程中，反冲的 Ge 原子在探头中沉积能量，叠加在其退激的 gamma 沉积能量上，形成拖尾</li>
+</ul>
+</li>
+</ul>
+<h3 id="%E7%9E%AC%E5%8F%91gamma%E7%9F%A9%E9%98%B5-prompt-prompt-gamma-matrix">&#30636;&#21457;gamma&#30697;&#38453; prompt-prompt gamma matrix<a class="anchor-link" href="#%E7%9E%AC%E5%8F%91gamma%E7%9F%A9%E9%98%B5-prompt-prompt-gamma-matrix">&#182;</a></h3><ul>
+<li><p>开窗谱中强度相近（数量级）的跃迁基本一定是邻近的</p>
+<ul>
+<li>因此，如果在nndc的纲图上邻近的跃迁没有在开窗谱中看到，那么多半是指认错了核</li>
+</ul>
+</li>
+<li><p>多普勒修正后分辨下降，在本实验中合并为 2keV/bin 较为合适</p>
+</li>
+<li><p>如果峰位在一个 bin 上特别尖锐（前提是周围形成峰形，单独冒出来的一个bin不算），那么指认到的跃迁能量误差基本在一个 bin 的范围之内；相差1-2个bin以上基本可以确定是指认错了</p>
+</li>
 </ul>
 
 </div>
@@ -14661,7 +14727,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>2023年 11月 17日 星期五 11:26:54 CST
+<pre>2023年 11月 16日 星期四 16:18:56 CST
 
 </pre>
 </div>
