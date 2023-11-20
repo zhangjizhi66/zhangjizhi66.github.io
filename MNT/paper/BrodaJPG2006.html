@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>LaBr3wave</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>BrodaJPG2006</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14579,7 +14579,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="LaBr3-%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E7%AE%97%E6%B3%95">LaBr3 &#27874;&#24418;&#35299;&#22534;&#31215;&#31639;&#27861;<a class="anchor-link" href="#LaBr3-%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E7%AE%97%E6%B3%95">&#182;</a></h1>
+<h1 id="Broda:-Spectroscopic-studies-with-the-use-of-deep-inelastic-heavy-ion-reactions">Broda: Spectroscopic studies with the use of deep-inelastic heavy-ion reactions<a class="anchor-link" href="#Broda:-Spectroscopic-studies-with-the-use-of-deep-inelastic-heavy-ion-reactions">&#182;</a></h1><p><a href="../pdf/Broda_2006_J._Phys._G__Nucl._Part._Phys._32_R151.pdf">BrodaJPG2006</a></p>
+
 </div>
 </div>
 </div>
@@ -14590,48 +14591,97 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="%E6%95%B0%E6%8D%AE">&#25968;&#25454;<a class="anchor-link" href="#%E6%95%B0%E6%8D%AE">&#182;</a></h3><ul>
-<li>每轮约 20 万个长波形，每个波形 20000 个点</li>
+<h3 id="%E6%B7%B1%E5%BA%A6%E9%9D%9E%E5%BC%B9%E6%95%A3%E5%B0%84%E7%94%A8%E4%BA%8E%E7%A0%94%E7%A9%B6yrast%E7%BB%93%E6%9E%84">&#28145;&#24230;&#38750;&#24377;&#25955;&#23556;&#29992;&#20110;&#30740;&#31350;yrast&#32467;&#26500;<a class="anchor-link" href="#%E6%B7%B1%E5%BA%A6%E9%9D%9E%E5%BC%B9%E6%95%A3%E5%B0%84%E7%94%A8%E4%BA%8E%E7%A0%94%E7%A9%B6yrast%E7%BB%93%E6%9E%84">&#182;</a></h3><ul>
+<li>丰中子核用传统的熔合蒸发反应很难产生，长期以来人们只能通过放射性衰变有限地研究其性质，而对其yrast结构知之甚少。即使运用放射性核束也不能有效克服这一缺陷。</li>
+<li>两体反应是前往丰中子核区的主要手段</li>
 </ul>
-<h3 id="%E8%A7%A6%E5%8F%91%E9%80%BB%E8%BE%91">&#35302;&#21457;&#36923;&#36753;<a class="anchor-link" href="#%E8%A7%A6%E5%8F%91%E9%80%BB%E8%BE%91">&#182;</a></h3><ul>
-<li>快速滤波 (fastfilter) 过阈触发<ul>
-<li>前 1000 个点无信号，用于评估噪声水平</li>
-<li>取噪声水平的若干倍为阈值</li>
+<p><img src="../img/92mo_60ni_dic.jpg" style="zoom:50%"></p>
+<ul>
+<li><p>255MeV 60Ni+92Mo</p>
+<ul>
+<li>厚靶 0.8mg/cm2，厚Pb衬底</li>
+<li>探测阵列：12个反康Ge探测器</li>
+<li>实验目标是观测熔合蒸发反应生成的N=82乏中子核，但同时也观测到许多非弹散射和核子转移的产物</li>
+<li>观测到非集体的高自旋态（最高I=12），如右图，表明深度非弹散射可以用于yrast spectroscopy</li>
+</ul>
+</li>
+<li><p>255MeV 54Fe+106Cd</p>
+<ul>
+<li>厚靶 1.2mg/cm2，厚Pb衬底</li>
+<li>从下图的side feeding可以看出，即使在小质量转移的准弹散射中，一些强布居的态也伴随着高自旋布居的拖尾</li>
 </ul>
 </li>
 </ul>
-<h3 id="%E6%A0%87%E5%87%86%E6%B3%A2%E5%BD%A2">&#26631;&#20934;&#27874;&#24418;<a class="anchor-link" href="#%E6%A0%87%E5%87%86%E6%B3%A2%E5%BD%A2">&#182;</a></h3><ul>
-<li>筛选无堆积的波形<ul>
-<li>粗筛：触发前后一定范围不存在其他触发（指快速滤波触发）</li>
-<li>细筛：计算波形半高宽，画出峰宽-峰高的二维关联图，用 TCutG 选取密集条带区域，该区域为良好的无堆积事件</li>
-<li>p.s. 条带外的散点来自非常紧密的堆积事件，它们无法用快速滤波分辨出来</li>
+<p><img src="../img/54fe_106cd_side_feeding.jpg" style="zoom:50%"></p>
+<h3 id="%E5%85%B8%E5%9E%8B%E7%9A%84%E9%87%8D%E6%A0%B8%E4%B8%A4%E4%BD%93%E5%8F%8D%E5%BA%94%E5%AE%9E%E9%AA%8C%E8%AE%BE%E7%BD%AE">&#20856;&#22411;&#30340;&#37325;&#26680;&#20004;&#20307;&#21453;&#24212;&#23454;&#39564;&#35774;&#32622;<a class="anchor-link" href="#%E5%85%B8%E5%9E%8B%E7%9A%84%E9%87%8D%E6%A0%B8%E4%B8%A4%E4%BD%93%E5%8F%8D%E5%BA%94%E5%AE%9E%E9%AA%8C%E8%AE%BE%E7%BD%AE">&#182;</a></h3><ul>
+<li>对于选定的重核碰撞系统，其能量一般选在稍高于库仑势垒的区域（1.1～2.0倍），熔合蒸发反应的截面通常很低<ul>
+<li>即使能量提高到可以形成复合核，由于弹核很重，复合核也会携带很大的角动量，从而发生熔合裂变，其产物通常也是感兴趣的</li>
 </ul>
 </li>
-<li>求解波形形状随波形高度的变化关系<ul>
-<li>计算波形最高点 xmax ymax</li>
-<li>计算最高点 xmax 附近某点 x0 处的相对高度 y0/ymax</li>
-<li>对于固定的 x0，画出 y0/ymax : ymax 二维关联图，用二次函数拟合</li>
-<li>这样，只要给定 ymax，就能画出相应的标准波形</li>
+<li>在束时间通常为数天</li>
+<li>使用脉冲束，以区别prompt和delayed gamma。典型周期为几十到几百ns</li>
+<li>厚靶实验的特点<ul>
+<li>由于多普勒效应，时间短于1ps的态无法观测</li>
+<li>实际的反应能量低于束流能量（最低至库仑势垒），使得准弹性散射成分增多，对于研究深度非弹散射是不利的</li>
+<li>可以观测非常前冲的碎片。在一些实验中，由于束流与前冲碎片重合，这些碎片无法观测</li>
 </ul>
 </li>
 </ul>
-<h3 id="%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E4%B8%8E%E6%8B%9F%E5%90%88">&#27874;&#24418;&#35299;&#22534;&#31215;&#19982;&#25311;&#21512;<a class="anchor-link" href="#%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E4%B8%8E%E6%8B%9F%E5%90%88">&#182;</a></h3><ul>
-<li>将原始长波形分段，堆积的信号一起拟合，无堆积的信号相互分离</li>
-<li>以触发位置为初值，进行第一次拟合</li>
-<li>计算拟合结果与原波形的残差，对残差图寻峰，在峰值处尝试添加新峰拟合<ul>
-<li>添加新峰，要求残差大于噪声水平，且新峰拟合后的位置不能与已有峰重合，且必须将 chi2/ndf 降低到一定比例以下</li>
-<li>若以上条件不满足，则选取残差的另一峰值尝试</li>
-<li>若确定添加新峰，则再次计算拟合残差，重复本步骤</li>
-<li>若所有残差峰值处都不能添加新峰，则结束循环</li>
+<h3 id="N/Z%E5%B9%B3%E8%A1%A1">N/Z&#24179;&#34913;<a class="anchor-link" href="#N/Z%E5%B9%B3%E8%A1%A1">&#182;</a></h3><h4 id="3%E4%B8%AA%E5%AE%9E%E9%AA%8C">3&#20010;&#23454;&#39564;<a class="anchor-link" href="#3%E4%B8%AA%E5%AE%9E%E9%AA%8C">&#182;</a></h4><p><img src="../img/Three_experiments_mass_yield.jpg" style="zoom:60%"></p>
+<ul>
+<li>350MeV 64Ni+208Pb<ul>
+<li>能量稍低于复合核形成的阈值</li>
 </ul>
 </li>
-<li>最后再次检查并剔除位置重合的峰（添加新峰可能会影响原有峰位）</li>
+<li>345MeV 58Ni—+208Pb<ul>
+<li>弹靶的N/Z值差异更大</li>
 </ul>
-<h3 id="%E6%A8%A1%E6%8B%9F">&#27169;&#25311;<a class="anchor-link" href="#%E6%A8%A1%E6%8B%9F">&#182;</a></h3><ul>
-<li>按照标准波形生成模拟信号，包括波形高度与波形积分的关联关系</li>
-<li>按照事件间隔的泊松分布安排事件的发生时间：$$I(t)=re^{-rt}dt$$其中 r 为事件计数率，其单位应与抽样得到的 t 的单位相同。</li>
-<li>设置阈值，将模拟生成的超出阈值的信号设置为阈值</li>
-<li>按照实验情况设置基线的高斯白噪声</li>
+</li>
+<li><p>275 MeV 64Ni+130Te</p>
+<ul>
+<li>熔合蒸发和熔合裂变的截面更高</li>
+</ul>
+</li>
+<li><p>在反应58Ni+208Pb中，质量分布在A～100附近有一集团（如右图），来源于类靶碎片的裂变产物</p>
+<ul>
+<li>64Ni+208Pb中也有这一现象，但并不明显。这是因为58Ni更容易向208Pb转移质子，形成易裂变的核</li>
+</ul>
+</li>
+<li>在反应64Ni+130Te中，可以明显看到熔合裂变的贡献（质量分布的A～100区域）</li>
+</ul>
+<h4 id="N/Z%E5%B9%B3%E8%A1%A1%E7%9A%84%E5%AE%9E%E9%AA%8C%E7%8E%B0%E8%B1%A1">N/Z&#24179;&#34913;&#30340;&#23454;&#39564;&#29616;&#35937;<a class="anchor-link" href="#N/Z%E5%B9%B3%E8%A1%A1%E7%9A%84%E5%AE%9E%E9%AA%8C%E7%8E%B0%E8%B1%A1">&#182;</a></h4><ul>
+<li><p>反应中靶核的N/Z通常比弹核高，反应之后碎片的N/Z趋向平衡</p>
+<ul>
+<li>因此，靶核向弹核转移中子，或弹核向靶核转移质子，都是比较倾向于发生的过程</li>
+</ul>
+</li>
+<li><p>将isobar的N/Z值按截面进行加权平均，作出N/Z随质量数的演化，如下图</p>
+<ul>
+<li>可以看到，当产物质量稍稍偏离弹靶时，N/Z就开始迅速互相靠近</li>
+<li>但即使反应深入至熔合裂变，N/Z也没有完全达到平衡。这限制了丰中子产物的极端程度。</li>
+</ul>
+</li>
+</ul>
+<p><img src="../img/64ni_130te_N-Z.jpg" style="zoom:40%"></p>
+<h4 id="N/Z%E5%B9%B3%E8%A1%A1%E7%9A%84%E7%90%86%E8%AE%BA%E6%A8%A1%E5%9E%8B">N/Z&#24179;&#34913;&#30340;&#29702;&#35770;&#27169;&#22411;<a class="anchor-link" href="#N/Z%E5%B9%B3%E8%A1%A1%E7%9A%84%E7%90%86%E8%AE%BA%E6%A8%A1%E5%9E%8B">&#182;</a></h4><p><img src="../img/N-Z_fit.jpg" style="zoom:60%"></p>
+<ul>
+<li><p>Swiatecki模型</p>
+<ul>
+<li>考虑两个相互接触的球形核，它们在液滴模型下总能量最低时，达到N/Z平衡；这种考虑高估了N/Z平衡所能进行的程度</li>
+<li>改进：考虑处于 scission point 的两个有形变的核；但模型中没有直接考虑形变，而是认为通过拟合球形核之间的间距，可以粗糙地估计形变程度</li>
+<li>通过调节两球形核中心的距离参数，来改变总能量中占主要贡献的库仑能部分，从而达到与实验数据的最佳拟合</li>
+</ul>
+</li>
+<li><p>实验质量模型</p>
+<ul>
+<li>为了克服液滴模型不够精确的特点，将总能量取为质量损失与库仑能的和。其中质量损失采用实际的原子核质量来计算</li>
+</ul>
+</li>
+<li><p>右图是对58Ni+208Pb体系的一个较好的拟合结果，分别为实验质量模型（上）和Swiatecki模型（下）</p>
+<ul>
+<li>表明N/Z平衡过程与原子核在分裂点 scission point 的形变密切相关</li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -14667,7 +14717,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>2023年 11月 17日 星期五 11:26:54 CST
+<pre>2023年 11月 18日 星期六 12:58:46 CST
 
 </pre>
 </div>

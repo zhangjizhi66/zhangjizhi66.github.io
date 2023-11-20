@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>LaBr3wave</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>CSNS202311_spectra</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14579,7 +14579,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="LaBr3-%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E7%AE%97%E6%B3%95">LaBr3 &#27874;&#24418;&#35299;&#22534;&#31215;&#31639;&#27861;<a class="anchor-link" href="#LaBr3-%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E7%AE%97%E6%B3%95">&#182;</a></h1>
+<h1 id="LaBr3-%E8%83%BD%E8%B0%B1%E4%B8%8E%E6%97%B6%E9%97%B4%E8%B0%B1">LaBr3 &#33021;&#35889;&#19982;&#26102;&#38388;&#35889;<a class="anchor-link" href="#LaBr3-%E8%83%BD%E8%B0%B1%E4%B8%8E%E6%97%B6%E9%97%B4%E8%B0%B1">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -14590,48 +14590,226 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="%E6%95%B0%E6%8D%AE">&#25968;&#25454;<a class="anchor-link" href="#%E6%95%B0%E6%8D%AE">&#182;</a></h3><ul>
-<li>每轮约 20 万个长波形，每个波形 20000 个点</li>
+<h2 id="1%E3%80%81%E8%83%BD%E8%B0%B1">1&#12289;&#33021;&#35889;<a class="anchor-link" href="#1%E3%80%81%E8%83%BD%E8%B0%B1">&#182;</a></h2><p><img src="img/CSNS202311ewave.png" style="zoom:20%"></p>
+<h4 id="%E7%89%B9%E5%BE%81%E5%B3%B0%E8%AF%86%E5%88%AB">&#29305;&#24449;&#23792;&#35782;&#21035;<a class="anchor-link" href="#%E7%89%B9%E5%BE%81%E5%B3%B0%E8%AF%86%E5%88%AB">&#182;</a></h4><ul>
+<li><p>$^{139}La(n,n'\gamma)^{139}La$</p>
+<ul>
+<li>165.8 keV</li>
+<li>1043.1 keV</li>
 </ul>
-<h3 id="%E8%A7%A6%E5%8F%91%E9%80%BB%E8%BE%91">&#35302;&#21457;&#36923;&#36753;<a class="anchor-link" href="#%E8%A7%A6%E5%8F%91%E9%80%BB%E8%BE%91">&#182;</a></h3><ul>
-<li>快速滤波 (fastfilter) 过阈触发<ul>
-<li>前 1000 个点无信号，用于评估噪声水平</li>
-<li>取噪声水平的若干倍为阈值</li>
+</li>
+<li><p>$^{79}Br(n,n'\gamma)^{79}Br$</p>
+<ul>
+<li>217.1 keV</li>
+<li>261.4 keV</li>
+<li>306.5 keV</li>
+</ul>
+</li>
+<li><p>$^{81}Br(n,n'\gamma)^{81}Br$</p>
+<ul>
+<li>276.4 keV</li>
+</ul>
+</li>
+<li><p>$^{56}Fe(n,n'\gamma)^{56}Fe$</p>
+<ul>
+<li>846.8 keV</li>
+<li>1238.3 keV</li>
+</ul>
+</li>
+<li><p>$^{54}Fe(n,n'\gamma)^{54}Fe$</p>
+<ul>
+<li>1408.1 keV</li>
 </ul>
 </li>
 </ul>
-<h3 id="%E6%A0%87%E5%87%86%E6%B3%A2%E5%BD%A2">&#26631;&#20934;&#27874;&#24418;<a class="anchor-link" href="#%E6%A0%87%E5%87%86%E6%B3%A2%E5%BD%A2">&#182;</a></h3><ul>
-<li>筛选无堆积的波形<ul>
-<li>粗筛：触发前后一定范围不存在其他触发（指快速滤波触发）</li>
-<li>细筛：计算波形半高宽，画出峰宽-峰高的二维关联图，用 TCutG 选取密集条带区域，该区域为良好的无堆积事件</li>
-<li>p.s. 条带外的散点来自非常紧密的堆积事件，它们无法用快速滤波分辨出来</li>
+<p>108
+123
+166<em>
+196
+217</em>
+261<em>
+277</em>
+307*</p>
+<p>383
+475(thermal)
+534(thermal)
+568<em>
+847</em>
+1042<em>
+1238</em>
+1408*
+1798</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="2%E3%80%81%E6%97%B6%E9%97%B4%E8%B0%B1">2&#12289;&#26102;&#38388;&#35889;<a class="anchor-link" href="#2%E3%80%81%E6%97%B6%E9%97%B4%E8%B0%B1">&#182;</a></h2><p><img src="img/CSNS202311etwave.png" style="zoom:60%"></p>
+<h4 id="%E6%97%B6%E9%97%B4%E9%9B%B6%E7%82%B9">&#26102;&#38388;&#38646;&#28857;<a class="anchor-link" href="#%E6%97%B6%E9%97%B4%E9%9B%B6%E7%82%B9">&#182;</a></h4>$$t_{\gamma}=3295.28ns$$$$L/c=\cfrac{76m}{0.3m/ns}=253.33ns$$$$t_0=t_{\gamma}-\cfrac{L}{c}=3041.95ns$$<h4 id="%E4%B8%AD%E5%AD%90%E8%83%BD%E9%87%8F">&#20013;&#23376;&#33021;&#37327;<a class="anchor-link" href="#%E4%B8%AD%E5%AD%90%E8%83%BD%E9%87%8F">&#182;</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-c++"><pre><span></span><span class="n">t0</span><span class="o">=</span><span class="mi">3042</span><span class="p">;</span><span class="w"></span>
+<span class="n">L</span><span class="o">=</span><span class="mi">76</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-c++"><pre><span></span><span class="n">t</span><span class="o">=</span><span class="mi">4000</span><span class="p">;</span><span class="w"></span>
+<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">t</span><span class="o">&lt;&lt;</span><span class="s">&quot; ns&quot;</span><span class="o">&lt;&lt;</span><span class="sc">&#39;\n&#39;</span><span class="o">&lt;&lt;</span><span class="n">pow</span><span class="p">(</span><span class="mf">72.3</span><span class="o">*</span><span class="n">L</span><span class="o">/</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">t0</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="s">&quot; MeV&quot;</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>4000 ns
+32.8982 MeV</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-c++"><pre><span></span><span class="n">t</span><span class="o">=</span><span class="mi">15000</span><span class="p">;</span><span class="w"></span>
+<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">t</span><span class="o">&lt;&lt;</span><span class="s">&quot; ns&quot;</span><span class="o">&lt;&lt;</span><span class="sc">&#39;\n&#39;</span><span class="o">&lt;&lt;</span><span class="n">pow</span><span class="p">(</span><span class="mf">72.3</span><span class="o">*</span><span class="n">L</span><span class="o">/</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">t0</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="s">&quot; MeV&quot;</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>15000 ns
+0.211148 MeV</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-c++"><pre><span></span><span class="n">t</span><span class="o">=</span><span class="mi">35000</span><span class="p">;</span><span class="w"></span>
+<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">t</span><span class="o">&lt;&lt;</span><span class="s">&quot; ns&quot;</span><span class="o">&lt;&lt;</span><span class="sc">&#39;\n&#39;</span><span class="o">&lt;&lt;</span><span class="n">pow</span><span class="p">(</span><span class="mf">72.3</span><span class="o">*</span><span class="n">L</span><span class="o">/</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">t0</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="s">&quot; MeV&quot;</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>35000 ns
+0.0295627 MeV</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="3%E3%80%81%E6%97%B6%E9%97%B4%E5%B7%AE%E8%B0%B1">3&#12289;&#26102;&#38388;&#24046;&#35889;<a class="anchor-link" href="#3%E3%80%81%E6%97%B6%E9%97%B4%E5%B7%AE%E8%B0%B1">&#182;</a></h2><p><img src="img/CSNS202311dtwave.png" style="zoom:90%"></p>
+<ul>
+<li>均匀分布事件的时间差分布为泊松分布$$I(t)=Ae^{-rt}dt$$其中 r 为事件计数率，单位与时间轴的单位一致</li>
+<li>上图对探头距离 30cm 的第一个 gamma flush 进行拟合，得到束流 gamma 的计数率为$$r=0.078\ ns^{-1}=7.8\times10^7\ s^{-1}$$<ul>
+<li>20cm 1.2e8</li>
+<li>25cm 9.5e7</li>
+<li>30cm 7.8e7</li>
+<li>35cm 6.7e7</li>
+<li>40cm 5.7e7</li>
 </ul>
 </li>
-<li>求解波形形状随波形高度的变化关系<ul>
-<li>计算波形最高点 xmax ymax</li>
-<li>计算最高点 xmax 附近某点 x0 处的相对高度 y0/ymax</li>
-<li>对于固定的 x0，画出 y0/ymax : ymax 二维关联图，用二次函数拟合</li>
-<li>这样，只要给定 ymax，就能画出相应的标准波形</li>
-</ul>
-</li>
-</ul>
-<h3 id="%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E4%B8%8E%E6%8B%9F%E5%90%88">&#27874;&#24418;&#35299;&#22534;&#31215;&#19982;&#25311;&#21512;<a class="anchor-link" href="#%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E4%B8%8E%E6%8B%9F%E5%90%88">&#182;</a></h3><ul>
-<li>将原始长波形分段，堆积的信号一起拟合，无堆积的信号相互分离</li>
-<li>以触发位置为初值，进行第一次拟合</li>
-<li>计算拟合结果与原波形的残差，对残差图寻峰，在峰值处尝试添加新峰拟合<ul>
-<li>添加新峰，要求残差大于噪声水平，且新峰拟合后的位置不能与已有峰重合，且必须将 chi2/ndf 降低到一定比例以下</li>
-<li>若以上条件不满足，则选取残差的另一峰值尝试</li>
-<li>若确定添加新峰，则再次计算拟合残差，重复本步骤</li>
-<li>若所有残差峰值处都不能添加新峰，则结束循环</li>
-</ul>
-</li>
-<li>最后再次检查并剔除位置重合的峰（添加新峰可能会影响原有峰位）</li>
-</ul>
-<h3 id="%E6%A8%A1%E6%8B%9F">&#27169;&#25311;<a class="anchor-link" href="#%E6%A8%A1%E6%8B%9F">&#182;</a></h3><ul>
-<li>按照标准波形生成模拟信号，包括波形高度与波形积分的关联关系</li>
-<li>按照事件间隔的泊松分布安排事件的发生时间：$$I(t)=re^{-rt}dt$$其中 r 为事件计数率，其单位应与抽样得到的 t 的单位相同。</li>
-<li>设置阈值，将模拟生成的超出阈值的信号设置为阈值</li>
-<li>按照实验情况设置基线的高斯白噪声</li>
 </ul>
 
 </div>
@@ -14642,7 +14820,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-c++"><pre><span></span><span class="o">!</span><span class="n">date</span><span class="w"></span>
@@ -14667,7 +14845,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>2023年 11月 17日 星期五 11:26:54 CST
+<pre>2023年 11月 20日 星期一 09:43:17 CST
 
 </pre>
 </div>

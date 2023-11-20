@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>LaBr3wave</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>KrolasNPA2003</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14579,7 +14579,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="LaBr3-%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E7%AE%97%E6%B3%95">LaBr3 &#27874;&#24418;&#35299;&#22534;&#31215;&#31639;&#27861;<a class="anchor-link" href="#LaBr3-%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E7%AE%97%E6%B3%95">&#182;</a></h1>
+<h1 id="Krolas:-Gamma-coincidence-study-of-208Pb+350MeV-64Ni-collisions">Krolas: Gamma coincidence study of 208Pb+350MeV 64Ni collisions<a class="anchor-link" href="#Krolas:-Gamma-coincidence-study-of-208Pb+350MeV-64Ni-collisions">&#182;</a></h1><p><a href="../pdf/1-s2.0-S0375947403015446-main">KrolasNPA2003</a></p>
+
 </div>
 </div>
 </div>
@@ -14590,48 +14591,101 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="%E6%95%B0%E6%8D%AE">&#25968;&#25454;<a class="anchor-link" href="#%E6%95%B0%E6%8D%AE">&#182;</a></h3><ul>
-<li>每轮约 20 万个长波形，每个波形 20000 个点</li>
+<h3 id="%E5%AE%9E%E9%AA%8C%E6%96%B9%E6%B3%95">&#23454;&#39564;&#26041;&#27861;<a class="anchor-link" href="#%E5%AE%9E%E9%AA%8C%E6%96%B9%E6%B3%95">&#182;</a></h3><ul>
+<li>208Pb, 30 mg/cm2, 厚靶</li>
+<li>64Ni @ 350MeV</li>
+<li>探测阵列：OSIRIS, 11 Compton suppressed Ge detectors, 48 BGO elements</li>
+<li>脉冲周期: 69 ns</li>
+<li>在束时间: 84 h</li>
 </ul>
-<h3 id="%E8%A7%A6%E5%8F%91%E9%80%BB%E8%BE%91">&#35302;&#21457;&#36923;&#36753;<a class="anchor-link" href="#%E8%A7%A6%E5%8F%91%E9%80%BB%E8%BE%91">&#182;</a></h3><ul>
-<li>快速滤波 (fastfilter) 过阈触发<ul>
-<li>前 1000 个点无信号，用于评估噪声水平</li>
-<li>取噪声水平的若干倍为阈值</li>
+<h3 id="%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90">&#25968;&#25454;&#20998;&#26512;<a class="anchor-link" href="#%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90">&#182;</a></h3><h4 id="%E5%9C%A8%E6%9D%9F%E6%95%B0%E6%8D%AE">&#22312;&#26463;&#25968;&#25454;<a class="anchor-link" href="#%E5%9C%A8%E6%9D%9F%E6%95%B0%E6%8D%AE">&#182;</a></h4><ul>
+<li>深度非弹产物<ul>
+<li>population is mainly yrast @ lowest excitation region</li>
+<li>因此，最低的几条yrast transitions的符合强度代表了大部分的产出</li>
+<li>特别地，对于大质量转移（10以上）的偶偶核产物，4+到2+到0+的跃迁代表了90%以上的产物总截面</li>
+</ul>
+</li>
+<li>准弹散产物<ul>
+<li>需要判断几条跃迁的符合强度在总截面中的比例，才能计算总截面</li>
 </ul>
 </li>
 </ul>
-<h3 id="%E6%A0%87%E5%87%86%E6%B3%A2%E5%BD%A2">&#26631;&#20934;&#27874;&#24418;<a class="anchor-link" href="#%E6%A0%87%E5%87%86%E6%B3%A2%E5%BD%A2">&#182;</a></h3><ul>
-<li>筛选无堆积的波形<ul>
-<li>粗筛：触发前后一定范围不存在其他触发（指快速滤波触发）</li>
-<li>细筛：计算波形半高宽，画出峰宽-峰高的二维关联图，用 TCutG 选取密集条带区域，该区域为良好的无堆积事件</li>
-<li>p.s. 条带外的散点来自非常紧密的堆积事件，它们无法用快速滤波分辨出来</li>
+<h4 id="%E7%86%94%E5%90%88%E5%8F%8D%E5%BA%94">&#29076;&#21512;&#21453;&#24212;<a class="anchor-link" href="#%E7%86%94%E5%90%88%E5%8F%8D%E5%BA%94">&#182;</a></h4><ul>
+<li>由于束流能量350MeV仅仅比库仑势垒高出12%，因此熔合反应的截面是低的<ul>
+<li>在更高能量380MeV下，复合核更容易形成，熔合截面变高</li>
 </ul>
 </li>
-<li>求解波形形状随波形高度的变化关系<ul>
-<li>计算波形最高点 xmax ymax</li>
-<li>计算最高点 xmax 附近某点 x0 处的相对高度 y0/ymax</li>
-<li>对于固定的 x0，画出 y0/ymax : ymax 二维关联图，用二次函数拟合</li>
-<li>这样，只要给定 ymax，就能画出相应的标准波形</li>
+<li>部分熔合裂变产物被探测到，位于A～140区域</li>
+</ul>
+<h4 id="%E6%88%AA%E9%9D%A2%E8%AE%A1%E7%AE%97">&#25130;&#38754;&#35745;&#31639;<a class="anchor-link" href="#%E6%88%AA%E9%9D%A2%E8%AE%A1%E7%AE%97">&#182;</a></h4><ul>
+<li>截面结果的准确度大约是20%</li>
+</ul>
+<h4 id="%E4%B8%AD%E5%AD%90%E5%8F%91%E5%B0%84">&#20013;&#23376;&#21457;&#23556;<a class="anchor-link" href="#%E4%B8%AD%E5%AD%90%E5%8F%91%E5%B0%84">&#182;</a></h4><ul>
+<li>认为大多数产物是稳定的或丰中子的，因此初始产物只经历中子发射过程，其他过程可以忽略</li>
+<li>在弹靶附近，中子发射的数目与初始产物的中子数相关性较强；在大质量转移区则相关性较弱</li>
+<li>通过分析中子发射数目，可以还原出初始产物截面。主要有交叉符合以及缺失质量两种分析方法。<ul>
+<li>结果表明，类靶碎片平均发射不超过6个中子</li>
+<li>两种方法算出的中子发射数符合较好，差异不超过0.4个中子</li>
 </ul>
 </li>
 </ul>
-<h3 id="%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E4%B8%8E%E6%8B%9F%E5%90%88">&#27874;&#24418;&#35299;&#22534;&#31215;&#19982;&#25311;&#21512;<a class="anchor-link" href="#%E6%B3%A2%E5%BD%A2%E8%A7%A3%E5%A0%86%E7%A7%AF%E4%B8%8E%E6%8B%9F%E5%90%88">&#182;</a></h3><ul>
-<li>将原始长波形分段，堆积的信号一起拟合，无堆积的信号相互分离</li>
-<li>以触发位置为初值，进行第一次拟合</li>
-<li>计算拟合结果与原波形的残差，对残差图寻峰，在峰值处尝试添加新峰拟合<ul>
-<li>添加新峰，要求残差大于噪声水平，且新峰拟合后的位置不能与已有峰重合，且必须将 chi2/ndf 降低到一定比例以下</li>
-<li>若以上条件不满足，则选取残差的另一峰值尝试</li>
-<li>若确定添加新峰，则再次计算拟合残差，重复本步骤</li>
-<li>若所有残差峰值处都不能添加新峰，则结束循环</li>
+<h5 id="1%E3%80%81%E4%BA%A4%E5%8F%89%E7%AC%A6%E5%90%88%E5%88%86%E6%9E%90%E6%B3%95-cross-coincidence-analysis">1&#12289;&#20132;&#21449;&#31526;&#21512;&#20998;&#26512;&#27861; cross-coincidence analysis<a class="anchor-link" href="#1%E3%80%81%E4%BA%A4%E5%8F%89%E7%AC%A6%E5%90%88%E5%88%86%E6%9E%90%E6%B3%95-cross-coincidence-analysis">&#182;</a></h5><ul>
+<li>使用在束数据</li>
+<li>用一种产物（如Ni）中最强的gamma开窗，计算partner（Z值互补，如Pb）的同位素产出分布</li>
+<li>进而以产出为权重，计算同位素质量数的平均值，从而算出平均中子发射数</li>
+<li>除Ni-Pb之外，其他情况只对重核开窗，从而得到中子发射数与重核同位素的关联关系。相比轻核开窗，结果更完整可靠。</li>
+<li>注意：这样的分析过程并不能分辨两个碎片各自发射了多少中子<ul>
+<li>需要假设激发能在碎片之间按质量比例分布</li>
 </ul>
 </li>
-<li>最后再次检查并剔除位置重合的峰（添加新峰可能会影响原有峰位）</li>
 </ul>
-<h3 id="%E6%A8%A1%E6%8B%9F">&#27169;&#25311;<a class="anchor-link" href="#%E6%A8%A1%E6%8B%9F">&#182;</a></h3><ul>
-<li>按照标准波形生成模拟信号，包括波形高度与波形积分的关联关系</li>
-<li>按照事件间隔的泊松分布安排事件的发生时间：$$I(t)=re^{-rt}dt$$其中 r 为事件计数率，其单位应与抽样得到的 t 的单位相同。</li>
-<li>设置阈值，将模拟生成的超出阈值的信号设置为阈值</li>
-<li>按照实验情况设置基线的高斯白噪声</li>
+<h5 id="2%E3%80%81%E7%BC%BA%E5%A4%B1%E8%B4%A8%E9%87%8F%E5%88%86%E6%9E%90%E6%B3%95-missing-mass-analysis">2&#12289;&#32570;&#22833;&#36136;&#37327;&#20998;&#26512;&#27861; missing mass analysis<a class="anchor-link" href="#2%E3%80%81%E7%BC%BA%E5%A4%B1%E8%B4%A8%E9%87%8F%E5%88%86%E6%9E%90%E6%B3%95-missing-mass-analysis">&#182;</a></h5><ul>
+<li>对于截面很低的产物，一般缺乏其同位素的截面结果，无法得到同位素产出分布时，用本方法</li>
+<li>将Z值互补的两种产物的质量数按产出权重相加 (yield weighted mass)，在弹靶总质量272中减之，得到总中子发射数，再在碎片中分配中子发射数</li>
+<li>该方法对于大质量转移区较为适用，这一区域中子发射数与同位素关系不大</li>
+</ul>
+<h4 id="N/Z%E5%B9%B3%E8%A1%A1">N/Z&#24179;&#34913;<a class="anchor-link" href="#N/Z%E5%B9%B3%E8%A1%A1">&#182;</a></h4><p><img src="../img/N-Z_ni64_pb208.jpeg" style="zoom:50%"></p>
+<ul>
+<li><p>弹核64Ni是丰中子核，但在反应中容易吸收额外的中子；产物中包含68Ni，69Ni</p>
+<ul>
+<li>但在大质量转移时产物分布回到了稳定区，这个现象与N/Z平衡有关</li>
+</ul>
+</li>
+<li><p>N/Z平衡指的是反应之后，初始碎片的N/Z比值会向复合核的N/Z比值靠近</p>
+</li>
+<li><p>将质量数相同的所有产物的N/Z值取平均，并作出右图</p>
+<ul>
+<li>使用初始产物的N/Z值，并讨论了中子发射数不同的分配方式</li>
+<li>图像表明，历经很小质量的转移后（～3u），碎片的N/Z就会迅速变化为几乎固定的值；更多的质量转移不会明显改变这一数值</li>
+</ul>
+</li>
+<li><p>N/Z平衡理论模型 by Swiatecki</p>
+<ul>
+<li>考虑两个相互接触的球形核，它们在液滴模型下总能量最低时，达到N/Z平衡；这种考虑高估了N/Z平衡所能进行的程度</li>
+<li>改进：考虑处于分裂点 scission point 的两个有形变的核；但模型中没有直接考虑形变，而是认为通过拟合球形核之间的间距，可以粗糙地估计形变程度</li>
+<li>通过调节两球形核中心的距离参数，来改变总能量中占主要贡献的库仑能部分，从而达到与实验数据的最佳拟合<ul>
+<li>结果表明，两球形核表面之间必须加入3-10fm不等的距离才能大致复现实验数据，说明反应中原子核经历了相当程度的形变</li>
+<li>若中子发射数平均分配，拟合出的球形核间距更小（相比按质量分配的情况），意味着核的形变更小</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>另一种模型</p>
+<ul>
+<li>为了克服液滴模型不够精确的特点，将总能量取为质量损失与库仑能的和。其中质量损失采用实际的原子核质量来计算</li>
+<li>与实验结果的符合程度并无明显改善；拟合出的核间距与Swiatecki模型较为符合</li>
+</ul>
+</li>
+<li><p>在另外两篇文献中，作出了N/Z比值与总能量损失的关联；本文中产物截面是所有反应类型之和，无法作出这种关联</p>
+</li>
+<li><p>为了更精确地研究N/Z平衡的过程，作者建议使用更加乏中子的弹核58Ni，从而增加弹靶的N/Z的差异</p>
+</li>
+</ul>
+<h5 id="%E7%BB%93%E8%AE%BA">&#32467;&#35770;<a class="anchor-link" href="#%E7%BB%93%E8%AE%BA">&#182;</a></h5><ul>
+<li>N/Z平衡说明，如果用N/Z值较小的丰中子弹核击打N/Z值较大的丰中子靶核，则靶核依然可以向弹核转移中子，从而形成更极端的丰中子核<ul>
+<li>在大质量转移时，中子发射过程增强，产物多在稳定线附近</li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -14667,7 +14721,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>2023年 11月 17日 星期五 11:26:54 CST
+<pre>2023年 11月 18日 星期六 12:47:40 CST
 
 </pre>
 </div>
